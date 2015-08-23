@@ -1,21 +1,24 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.1.4",
-  "description": "A sample Node.js app using Express 4",
+  "name": "Scooby-gaming-corp-site",
+  "version": "0.0.1",
+  "description": "Scooby Gaming Corp Site",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
     "ejs": "^2.3.1",
-    "express": "~4.9.x"
+    "express": "~4.9.x",
+    "less": "2.5.1",
+    "bootstrap": "3.3.5",
+    "jquery": "*"
   },
   "engines": {
     "node": "0.12.2"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/ScoobyGaming/Scooby-Corp"
   },
   "keywords": [
     "node",
