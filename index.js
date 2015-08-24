@@ -21,8 +21,8 @@ app.get('/', function(request, response) {
     response.render('pages/about');
 }).get('/meet-the-team', function(request, response) {
     response.render('pages/meet-the-team');
-}).get('/contact-us', function(request, response) {
-    response.render('pages/contact-us');
+}).get('/contact', function(request, response) {
+    response.render('pages/contact');
 });
 
 app.listen(app.get('port'), function() {

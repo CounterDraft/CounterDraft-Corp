@@ -1,8 +1,17 @@
-<script type="text/javascript" src="/node_modules/requirejs/require.js"></script>
+<!-- <script type="text/javascript" src="/node_modules/requirejs/require.js"></script> -->
 <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/node_modules/less/dist/less.min.js"></script>
+<script>
+less = {
+    env: "development",
+    async: false,
+    fileAsync: false,
+    poll: 1000,
+    functions: {},
+    dumpLineNumbers: "comments",
+    relativeUrls: false,
+    rootpath: ":/a.com/"
+};
+</script>
 <script type="text/javascript" src="/js/scooby-gaming.js"></script>
-
-<link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/main.css" />

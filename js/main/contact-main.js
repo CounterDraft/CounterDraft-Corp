@@ -1,6 +1,6 @@
 define([], function() {
-	var title = 'home';
-	console.log('index main section');
+	var title = 'contact';
+	console.log('contact main section');
 	Scooby.Navigation.set(title);
 	// amstatz.EventBus.onContextInitialized(function() {
 	// 	 amstatz.Navigation.setPageDefaults('fitness', 'acsm-assessments');
