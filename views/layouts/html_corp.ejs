@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <% include ../partials/header.ejs %>
+</head>
+<body>
+<article id="scooby-<%= articleID %>">
+  <% include ../partials/nav.ejs %>
+  <%- body %>
+</article>
+</body>
+<script src="/js/main/<%= mainjs %>-main.js" type="text/javascript" charset="utf-8" async defer></script>
+</html>
