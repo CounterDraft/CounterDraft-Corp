@@ -10,7 +10,7 @@
 // 	}
 // });
 
-Scooby = {
+Counter = {
     Navigation: {
     	set: function(title){
     		$('ul.navbar-nav li').removeClass('active');

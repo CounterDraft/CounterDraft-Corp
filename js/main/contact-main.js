@@ -1,7 +1,7 @@
 define([], function() {
 	var title = 'contact';
 	console.log('contact main section');
-	Scooby.Navigation.set(title);
+	Counter.Navigation.set(title);
 	// amstatz.EventBus.onContextInitialized(function() {
 	// 	 amstatz.Navigation.setPageDefaults('fitness', 'acsm-assessments');
 	// 	amstatz.PageScope.router = new Router({

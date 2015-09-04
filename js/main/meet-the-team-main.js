@@ -1,7 +1,7 @@
 define([], function() {
 	var title = 'meet-the-team';
 	console.log('meet the team main section');
-	Scooby.Navigation.set(title);
+	Counter.Navigation.set(title);
 	// amstatz.EventBus.onContextInitialized(function() {
 	// 	 amstatz.Navigation.setPageDefaults('fitness', 'acsm-assessments');
 	// 	amstatz.PageScope.router = new Router({

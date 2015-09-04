@@ -1,4 +1,6 @@
 @import "general/tools";
+@import "general/fonts";
+@import "general/images";
 @import "general/footer";
 
 /*libs*/
@@ -8,8 +10,24 @@
 @import "pages/home";
 @import "pages/faq";
 
-.page-header {
-    min-height: 300px;
+body * {
+    font-family: 'Avenir Next W01';
+    /* All text an all pages for clients is this font */
+    
+    font-style: normal;
+    .body-text;
+    label small {
+	  text-transform: capitalize;
+    }
+    small {
+    	font-size: 60%;
+    	font-weight: inherit;
+    	line-height: normal;
+    }
+}
+
+.counter-page-header {
+    min-height: 400px;
 }
 
 .center {
@@ -21,6 +39,12 @@
     bottom: 0;
 }
 
+.to-top {
+    position: absolute;
+    top: 0;
+}
+
 .widget {
     position: relative;
+    border: 1px solid black;
 }
