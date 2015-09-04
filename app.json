@@ -1,6 +1,6 @@
 {
-  "name": "Scooby Gaming Corp Site",
-  "description": "Scooby Gaming Corp Site",
+  "name": "CounterDraft Corp Site",
+  "description": "CounterDraft Corp Site",
   "repository": "https://github.com/ScoobyGaming/Scooby-Corp",
   "logo": "http://scooby-corp.herokuapp.com/images/node.svg",
   "keywords": ["node", "express", "static"],
