@@ -16,7 +16,7 @@ app.set('layout', 'layouts/html_corp');
 app.use(expressLayouts);
 
 app.get('/', function(request, response) {
-    response.render('pages/index');
+    response.render('pages/home');
 }).get('/about', function(request, response) {
     response.render('pages/about');
 }).get('/meet-the-team', function(request, response) {
