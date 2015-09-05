@@ -1,5 +1,6 @@
-#Scooby-development
-Corp site for all Scooby Games. 
+#CounterDraft
+Corp site for counter draft corperation site.
 
 #About
-Scooby Games will be a gaming company who will specialize in fantasy football.
+CounterDraft is a company that offer a online service for fantancy sport gaming. It feels like poker but its
+fantancy sport playing. 
