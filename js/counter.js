@@ -20,3 +20,7 @@ Counter = {
 
     }
 }
+
+ga = function(){
+	console.log('loaded' + arguments);
+}

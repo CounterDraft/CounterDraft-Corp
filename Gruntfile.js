@@ -9,19 +9,21 @@ module.exports = function(grunt) {
             },
             build: {
                 src: 'js/counter.js',
-                dest: 'build/js/counterDraft.min.js'
+                dest: 'build/js/<%= pkg.name %>.min.js'
             }
         },
+
         less: {
-            development: {
+            compileCore: {
                 options: {
-                    paths: ["assets/css"],
-                    cleancss: true,
-                    compress: true
+                    strictMath: true,
+                    sourceMap: true,
+                    outputSourceFiles: true,
+                    sourceMapURL: '<%= pkg.name %>.css.map',
+                    sourceMapFilename: 'build/css/<%= pkg.name %>.css.map'
                 },
-                files: {
-                    "build/css/counter-draft-main.min.css": "css/counter-main.less"
-                }
+                src: 'css/counter-main.less',
+                dest: 'build/css/<%= pkg.name %>.css'
             }
         }
     });
@@ -30,6 +32,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     // Load the plugin that provides the "less" task.
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks("grunt-then");
 
     // Default task(s).
     grunt.registerTask('default', ['uglify', 'less']);

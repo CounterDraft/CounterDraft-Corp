@@ -1,4 +1,14 @@
 <!-- <script type="text/javascript" src="/node_modules/requirejs/require.js"></script> -->
+<%if (settings.env === 'production') { %>
+    <!-- <link rel="stylesheet" href="build/js/CounterDraft-corp-site.min.js"> -->
+<% } else { %>
+	<!-- <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="/node_modules/angular/angular.js"></script>
+	<script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/counter.js"></script> -->
+<% } %>
+
+
 <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
 <script src="/node_modules/angular/angular.js"></script>
 <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

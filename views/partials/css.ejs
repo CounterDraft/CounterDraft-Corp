@@ -1,14 +1,16 @@
-<!-- development -->
 <link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/e6263929-824a-481d-8955-0ba659fe6c13.css"/>
-<!-- <link rel="stylesheet/less" type="text/css" href="/css/counter-main.less" />
+<%if (settings.env === 'production') { %>
+    <link rel="stylesheet" href="build/css/CounterDraft-corp-site.min.css">
+<% } else { %>
+	<link rel="stylesheet/less" type="text/css" href="/css/counter-main.less" />
 <script>
-less = {
-    env: "development",
-    async: false,
-    fileAsync: false
-};
+	less = {
+	    env: "development",
+	    async: false,
+	    fileAsync: false
+	};
 </script>
-<script type="text/javascript" src="/node_modules/less/dist/less.min.js"></script> -->
+<script type="text/javascript" src="/node_modules/less/dist/less.min.js"></script>
+<% } %>
 
-<!-- if production -->
-<link rel="stylesheet" href="build/css/counter-draft-main.min.css">
+

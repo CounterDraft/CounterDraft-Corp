@@ -4,6 +4,7 @@ var expressLayouts = require('express-ejs-layouts');
 var npm = require("npm");
 var app = express();
 
+
 var loadServer = function() {
     app.set('port', (process.env.PORT || 5000));
 
@@ -36,31 +37,34 @@ var loadServer = function() {
 
 }
 
-var runDev = function(){
-	console.log('Updateing packages, please wait...');
-    npm.load({
-        "dev": true
-    }, function(err) {
-        // catch errors
-        npm.commands.install(function(er, data) {
-        	if(er){
-        		console.log('Failed to update packages ' + er);
-        	}
-            loadServer();
-        });
-        npm.on("log", function(message) {
-            console.log(message);
-        });
-    });
+var buildRun = function() {
+    var grunt = require('grunt');
+    console.log('Running build, please wait...');
+    grunt.tasks('default');
 }
 
-//if we are running in dev mode we update npm;
-if (process.env.MODE === 'development') {
-	runDev();
-} else if(process.env.MODE === 'production') {
-	loadServer();
-}else{
-	console.log('MODE not set, ex. MODE=development or MODE=production');
-	console.log('Running in development mode.');
-	runDev();
-}
+console.log('Updateing packages, please wait...');
+npm.load({
+    "dev": true
+}, function(err) {
+    // catch errors
+    npm.commands.install(function(er, data) {
+        if (er) {
+            console.log('Failed to update packages ' + er);
+        }
+
+        if (process.env.MODE === 'development') {
+            loadServer();
+        } else if (process.env.MODE === 'production') {
+            loadServer();
+        } else {
+            console.log('MODE not set, ex. MODE=development or MODE=production');
+            console.log('Running in development mode.');
+            loadServer();
+        }
+
+    });
+    npm.on("log", function(message) {
+        console.log(message);
+    });
+});
