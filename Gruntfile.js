@@ -23,7 +23,7 @@ module.exports = function(grunt) {
                     sourceMapFilename: 'build/css/<%= pkg.name %>.css.map'
                 },
                 src: 'css/counter-main.less',
-                dest: 'build/css/<%= pkg.name %>.css'
+                dest: 'build/css/<%= pkg.name %>.min.css'
             }
         }
     });
