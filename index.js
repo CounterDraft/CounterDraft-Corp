@@ -16,6 +16,10 @@ var loadServer = function() {
 
     // defaults to 'html_corp' if not defined in the render();
     app.set('layout', 'layouts/html_corp');
+    
+    if(process.env.MODE){
+        app.settings.env = process.env.MODE;
+    }
 
     app.use(expressLayouts);
 
