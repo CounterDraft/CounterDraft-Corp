@@ -1,6 +1,29 @@
 @import "tools";
-nav.counter-nav{
-	*{
-		color: @clientColorLightestGray;
-	}
+nav.counter-nav {
+    padding-top: 5px;
+    background: transparent;
+    border: none;
+    .navbar-brand {
+        * {
+            .page-title;
+            font-weight: bold;
+            // color:@clientColorGreen;
+        }
+    }
+    .nav {
+        a {
+            color: @color-secondary-4!important;
+        }
+        a:hover {
+            .box-shadow(-1px, 0, 2px, 0.2);
+            .border-radius();
+            background: @color-secondary-0!important;
+        }
+    }
+    .navbar-toggle {
+        .icon-bar {
+            background-color: @color-secondary-4;
+            border: none!important;
+        }
+    }
 }

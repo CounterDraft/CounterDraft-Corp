@@ -1,32 +1,36 @@
+//general
 @import "general/tools";
 @import "general/fonts";
 @import "general/nav";
 @import "general/images";
 @import "general/footer";
+@import "general/buttons";
 
 /*libs*/
 @import "../node_modules/bootstrap/less/bootstrap";
 
-
 /*pages*/
 @import "pages/home";
 @import "pages/faq";
-body * {
-    font-family: 'Avenir Next W01';
-    /* All text an all pages for clients is this font */
-    font-style: normal;
-    .body-text;
-    label small {
-        text-transform: capitalize;
-    }
-    small {
-        font-size: 60%;
-        font-weight: inherit;
-        line-height: normal;
+
+
+body {
+    * {
+        font-family: 'Avenir Next W01';
+        /* All text an all pages for clients is this font */
+        font-style: normal;
+        .body-text;
     }
 }
-body{
+
+body {
     background-color: @clientColorLightestGray;
+}
+
+.small-image{
+    @si: 40px;
+    height: @si;
+    width: @si;
 }
 
 .counter-page-header {
