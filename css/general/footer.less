@@ -11,12 +11,35 @@ footer {
         }
         ul {
             list-style: none;
+            li {
+                border-left: 1px solid white;
+                padding-left: 1em;
+                a{
+                    padding: .5em;
+                }
+                a:hover{
+                    background-color: @clientColorLightestGray;
+                    color: white;
+                    text-decoration: none;
+                    .border-radius(10px);
+                }
+            }
         }
         .footer-corp {
             padding: 1em;
             * {
                 color: @clientColorDarkGray !important;
             }
+        }
+
+        @media screen and (max-width: @bootstrap-med) {
+            ul{
+                text-align: center;
+                li{
+                    border:none;
+                }
+            }
+
         }
     }
 }
