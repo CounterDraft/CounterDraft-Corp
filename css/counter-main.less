@@ -7,13 +7,13 @@
 @import "general/buttons";
 
 /*libs*/
+
 @import "../node_modules/bootstrap/less/bootstrap";
 
 /*pages*/
+
 @import "pages/home";
 @import "pages/faq";
-
-
 body {
     * {
         font-family: 'Avenir Next W01';
@@ -27,14 +27,39 @@ body {
     background-color: @clientColorLightestGray;
 }
 
-.small-image{
+.apple-message-box {
+    position: relative;
+    z-index: -1;
+    color: white;
+    word-wrap: break-word;
+    max-width: 200px;
+    min-height: 40px;
+    padding: 1em;
+    .modal-title;
+    .border-radius(20px);
+    background-color: @clientColorBlue;
+    .dialog-arrow {
+        position: absolute;
+        top: 60px;
+        left: 30px;
+        z-index: -1;
+    }
+    span {
+        color: white !important;
+        @media screen and (max-width: @bootstrap-med){
+            .text-size-regular;
+        }
+    }
+}
+
+.small-image {
     @si: 40px;
     height: @si;
     width: @si;
 }
 
 .counter-page-header {
-    min-height: 400px;
+    min-height: 500px;
 }
 
 .center {
