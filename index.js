@@ -30,8 +30,14 @@ var loadServer = function() {
         response.render('pages/about');
     }).get('/meet-the-team', function(request, response) {
         response.render('pages/meet-the-team');
-    }).get('/contact', function(request, response) {
-        response.render('pages/contact');
+    }).get('/contact-us', function(request, response) {
+        response.render('pages/contact-us');
+    }).get('/terms-of-service', function(request, response) {
+        response.render('pages/terms-of-service');
+    }).get('/legal', function(request, response) {
+        response.render('pages/legal');
+    }).get('/careers', function(request, response) {
+        response.render('pages/careers');
     }).get('/faq', function(request, response) {
         response.render('pages/faq');
     });
