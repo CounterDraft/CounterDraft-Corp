@@ -14,10 +14,10 @@ footer {
             li {
                 border-left: 1px solid white;
                 padding-left: 1em;
-                a{
+                a {
                     padding: .5em;
                 }
-                a:hover{
+                a:hover {
                     background-color: @clientColorLightestGray;
                     color: white;
                     text-decoration: none;
@@ -31,15 +31,16 @@ footer {
                 color: @clientColorDarkGray !important;
             }
         }
-
         @media screen and (max-width: @bootstrap-med) {
-            ul{
+            > div {
                 text-align: center;
-                li{
-                    border:none;
+            }
+            ul {
+                padding: 0;
+                li {
+                    border: none;
                 }
             }
-
         }
     }
 }
