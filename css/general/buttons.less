@@ -1,22 +1,25 @@
 //styling for action button
 .primary {
-    &.button {
+    &.btn {
         .box-shadow(-1px, 0, 2px, 0.2);
         .text-shadow(-1px, 0, 0, 0.2);
         border: none;
         .border-radius();
-        .gradient(top, @color-primary-0, @color-primary-4);
-        color: white;
-        padding: 0 20px;
-        height: 40px;
+        .gradient(top, @clientColorGreen, darken(@clientColorGreen, 20%));
+        color: white !important;
+        height: 50px;
         &:hover {
             opacity: .8;
+        }
+
+        @media screen and (max-width: @bootstrap-med) {
+            .text-size-small;
         }
     }
 }
 
 .secondary {
-    &.button {
+    &.btn {
         .border-radius();
         padding: 0 20px;
         height: 40px;
@@ -24,11 +27,15 @@
             opacity: .8;
         }
     }
+
+    @media screen and (max-width: @bootstrap-med) {
+            .text-size-small;
+        }
 }
 
 //styling for nav buttons
 .tertiary {
-    &.button {
+    &.btn {
         .box-shadow(-1px, 0, 2px, 0.2);
         .text-shadow(-1px, 0, 0, 0.2);
         .border-radius();
@@ -36,6 +43,10 @@
         &:hover {
             opacity: .8;
             background-color: @color-secondary-0!important;
+        }
+
+        @media screen and (max-width: @bootstrap-med) {
+            .text-size-small;
         }
     }
 }
@@ -47,9 +58,13 @@ button.quaternary {
     background: @clientColorLightGray;
     color: black;
     cursor: auto;
+
+    @media screen and (max-width: @bootstrap-med) {
+            .text-size-small;
+        }
 }
 
-.button.nmb {
+.btn.nmb {
     margin-bottom: 0;
 }
 
