@@ -1,25 +1,8 @@
 define([], function() {
-	var title = 'contact';
-	console.log('contact main section');
-	Counter.Navigation.set(title);
-	// amstatz.EventBus.onContextInitialized(function() {
-	// 	 amstatz.Navigation.setPageDefaults('fitness', 'acsm-assessments');
-	// 	amstatz.PageScope.router = new Router({
-	// 		collection : new Collection([], {
-	// 			context : {
-	// 			}
-	// 		}),
-			
-	// 		labels : {
-	// 			notMatchingResults : "<tr><td>No matching Health PAR-Qs.</td></tr>"
-	// 		},
-	// 		filterConfig : {
-	// 			templates: {
-	// 				suggestion: Handlebars.compile('<p>{{athlete.name}}</p>')
-	// 			}
-	// 		}
-	// 	});
+    var title = 'contact';
+    console.log('contact-main section');
+    Counter.Navigation.set(title);
 
-	// 	Backbone.history.start({pushState: true, root: amstatz.URL.prependGym('/fitness/acsmassessments')});
-	// });
+    // var contactApp = angular.module([],'contactApp');
+
 });

@@ -7,6 +7,7 @@
 @import "general/buttons";
 
 /*libs*/
+
 @import "../node_modules/bootstrap/less/bootstrap";
 @import "libs/glyphicons";
 
@@ -24,6 +25,42 @@ body {
     }
 }
 
+// textarea, input, button{
+//     .border-radius();
+//     .box-shadow();
+// }
+input[type="text"],
+input[type="tel"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+input[type="search"],
+select,
+textarea,
+fieldset {
+    .border-radius();
+}
+
+select,
+textarea,
+fieldset {
+    .box-shadow();
+    border: 1px solid @bootstrap-input-border-color;
+}
+
+input[type="text"][readonly] {
+    background-color: white;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+input[type="search"],
+select {
+    height: 40px;
+}
+
 body {
     background-color: @clientColorLightestGray;
 }
@@ -34,6 +71,32 @@ body {
         .box-shadow(-1px, 0, 2px, 0.2);
         .border-radius();
         background: @color-secondary-0!important;
+    }
+}
+
+.e-holder {
+    position: relative;
+    overflow: hidden;
+    background-image: url("/images/blue-person-plceholder.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    .box-shadow();
+    .border-radius();
+    h2 {
+        .text-size-regular;
+        text-align: center;
+        width: 100%;
+        padding: .5em;
+        margin: 0;
+        opacity: .7;
+        color: white;
+        background: @color-secondary-0;
+    }
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    @media screen and (max-width: @bootstrap-med) {
+        margin-bottom: 1em;
     }
 }
 
