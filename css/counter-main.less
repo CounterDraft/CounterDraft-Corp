@@ -74,6 +74,19 @@ body {
     }
 }
 
+div.light-section, div.dark-section{
+    padding: 60px 0px 54px 0;
+    min-height: 233px;
+}
+
+div.light-section{
+    background: transparent;
+}
+
+div.dark-section{
+    background: @counter-dark-section;
+}
+
 .e-holder {
     position: relative;
     overflow: hidden;
@@ -135,10 +148,10 @@ body {
 
 .counter-page-header {
     min-height: 500px;
-}
-
-.center {
-    text-align: center
+    *{
+       color: white !important; 
+    }
+    
 }
 
 .to-bottom {
