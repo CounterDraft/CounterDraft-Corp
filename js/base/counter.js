@@ -1,15 +1,4 @@
-// require.config({
-//     baseUrl: "/js/",
-//     waitSeconds: 12,
-//     paths: {
-//         lib: "../lib",
-//         home: "../",
-//         main: "../main",
-//         async: "../async",
-//         modules: "../modules"
-//     }
-// });
-
+"use restrict"; // restrict mode for JavaScript
 Counter = {
     Navigation: {
         set: function(title) {

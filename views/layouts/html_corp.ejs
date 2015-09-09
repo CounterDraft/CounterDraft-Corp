@@ -2,7 +2,6 @@
 <html lang="en" data-framework="angularjs">
 <head>
     <title><%= title %></title>
-    <!-- <meta name="google-site-verification" content="34g3H1xzrsGIbCsdV7JArS9uj-OA-0Pexf4oxRTXchs" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <% include ../partials/css.ejs %>
 </head>
@@ -13,6 +12,6 @@
 </article>
 </body>
 <% include ../partials/footer.ejs %>
-<script data-main="/js/main/<%= mainjs %>-main.js" src="/node_modules/requirejs/require.js"></script>
 <% include ../partials/js.ejs %>
+<script data-main="/js/<%= mainjs %>-page.js" src="/node_modules/requirejs/require.js"></script>
 </html>

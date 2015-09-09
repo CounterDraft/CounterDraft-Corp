@@ -1,9 +1,9 @@
 define([
-        "text!../js/modules/contact/templates/contact-form-tmpl.html"
+        "text!../js/modules/contact/templates/contact-form-tmpl.html",
         'base/view'
     ],
-    function(Template, 
-                View) {
+    function(Template,
+        View) {
         var ContactView = View.extend({
 
             events: {},

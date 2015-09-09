@@ -9,7 +9,7 @@ define(
         Counter.Navigation.set(title);
 
         var contactView = new ContactView({
-        	model: new Model()
+            model: new Model()
         });
 
         console.log('here');
