@@ -1,5 +1,5 @@
 define([
-        "text!../js/modules/contact/templates/contact-form-tmpl.html",
+        "text!modules/contact/templates/contact-form-tmpl.html",
         'base/view'
     ],
     function(Template,
@@ -15,7 +15,6 @@ define([
                 this.model.bind("remove", this.render, this);
                 this.model.bind("change", this.render, this);
                 this.$el.html(this.template(this.model.toJSON()));
-                this.$el.foundation();
             }
 
             // render: function() {

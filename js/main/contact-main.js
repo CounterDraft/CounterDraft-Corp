@@ -12,9 +12,5 @@ define(
             model: new Model()
         });
 
-        console.log('here');
-
-        $('counter-page-header:first-child').append(contactView.render().$el);
-
-
+        $('.counter-page-header').first().append(contactView.render().$el);
     });

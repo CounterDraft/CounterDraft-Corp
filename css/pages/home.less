@@ -1,10 +1,18 @@
 article#counter-home {
     .img-home {
-        background-color: @color-primary-4;
-        padding-top: 25px;
+        // background-color: @color-primary-4;
+        // padding-top: 25px;
         h1 {
             padding: 1em;
             margin: 0;
+        }
+        
+        @media screen and (max-width: @bootstrap-med) {
+            h1.bottom-home-title {
+                position: relative;
+                bottom: 20px;
+                padding:0;
+            }
         }
         * {
             color: white;
