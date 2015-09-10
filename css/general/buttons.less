@@ -16,7 +16,6 @@
             position: relative;
             top:3px;
         }
-        
         // @media screen and (max-width: @bootstrap-med) {
         //     .text-size-small;
         // }
@@ -26,16 +25,21 @@
 .secondary {
     &.btn {
         .border-radius();
-        padding: 0 20px;
-        height: 40px;
+        .box-shadow(-1px, 0, 2px, 0.2);
+        // .text-shadow(-1px, 0, 0, 0.2);
+        // .gradient(top, @clientColorLightestGray, darken(@clientColorLightestGray, 20%));
+        .text-size-larger;
+        background-color:@color-secondary-0;
+        color: white !important;
+        border: none;
+        height: 50px;
         &:hover {
             opacity: .8;
         }
     }
-    .text-size-larger;
-    @media screen and (max-width: @bootstrap-med) {
-            .text-size-small;
-        }
+    // @media screen and (max-width: @bootstrap-med) {
+    //         .text-size-small;
+    //     }
 }
 
 //styling for nav buttons
@@ -50,9 +54,9 @@
             background-color: @color-secondary-0!important;
         }
         .text-size-larger;
-        @media screen and (max-width: @bootstrap-med) {
-            .text-size-small;
-        }
+        // @media screen and (max-width: @bootstrap-med) {
+        //     .text-size-small;
+        // }
     }
 }
 

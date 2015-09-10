@@ -30,16 +30,21 @@ window.Counter = {
     },
     showSignin: function() {
         this.googleAnalytics.ga('signin');
-        require(['modules/signin/views/signin-view'], function(SigninView) {
-            var model = new Backbone.Model();
+
+        require(['modules/signin/views/signin-view',
+            'modules/signin/models/signin-model',
+            'base/modal'
+        ], function(SigninView, SigninModel, Modal) {
+
             var signinView = new SigninView({
-                clasName: 'modal fade',
-                id: 'myModal',
-                model: model
+                model: new SigninModel()
             });
 
-            $('body').prepend(signinView.render().$el);
-            signinView.show();
+            new Modal({
+                view: signinView,
+                templateType: 0
+            }).render().show();
+
 
         });
     }
