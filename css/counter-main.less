@@ -37,10 +37,6 @@ fieldset {
     .border-radius();
 }
 
-h1{
-    .text-shadow();
-}
-
 select,
 textarea,
 fieldset {
@@ -74,25 +70,23 @@ body {
     }
 }
 
-div.light-section, div.dark-section{
+div.light-section,
+div.dark-section {
     padding: 60px 0px 54px 0;
     min-height: 233px;
 }
 
-div.light-section{
+div.light-section {
     background: transparent;
 }
 
-div.dark-section{
+div.dark-section {
     background: @counter-dark-section;
 }
 
 .e-holder {
     position: relative;
     overflow: hidden;
-    background-image: url("/images/blue-person-plceholder.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
     .box-shadow();
     .border-radius();
     h2 {
@@ -148,10 +142,16 @@ div.dark-section{
 
 .counter-page-header {
     min-height: 500px;
-    *{
-       color: white !important; 
+}
+
+.counter-page-header-1 {
+    .counter-page-header;
+    * {
+        color: white !important;
     }
-    
+    h1 {
+        .text-shadow();
+    }
 }
 
 .to-bottom {

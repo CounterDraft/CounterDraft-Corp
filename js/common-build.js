@@ -27,5 +27,20 @@ window.Counter = {
         ga: function() {
             console.log('loaded' + arguments);
         }
+    },
+    showSignin: function() {
+        this.googleAnalytics.ga('signin');
+        require(['modules/signin/views/signin-view'], function(SigninView) {
+            var model = new Backbone.Model();
+            var signinView = new SigninView({
+                clasName: 'modal fade',
+                id: 'myModal',
+                model: model
+            });
+
+            $('body').prepend(signinView.render().$el);
+            signinView.show();
+
+        });
     }
 }
