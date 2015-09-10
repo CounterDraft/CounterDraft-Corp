@@ -1,15 +1,8 @@
-<!-- <script type="text/javascript" src="/node_modules/requirejs/require.js"></script> -->
 <%if (settings.env === 'production') { %>
-    <!-- <link rel="stylesheet" href="build/js/CounterDraft-corp-site.min.js"> -->
-<% } else { %>
-	<!-- <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="/node_modules/angular/angular.js"></script>
-	<script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/js/counter.js"></script> -->
+    <script type="text/javascript" src="build/js/<%= settings.package_name %>.min.js"></script>
+    <% } else { %>
+        <script type="text/javascript" src="/node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="/node_modules/underscore/underscore.js"></script>
+        <script type="text/javascript" src="/node_modules/backbone/backbone.js"></script>
+        <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
 <% } %>
-<script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
-<!-- <script type="text/javascript" src="/node_modules/angular/angular.min.js"></script> -->
-<script type="text/javascript" src="/node_modules/underscore/underscore-min.js"></script>
-<script type="text/javascript" src="/node_modules/backbone/backbone-min.js"></script>
-<script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- <script type="text/javascript" src="/js/base/counter.js"></script> -->
