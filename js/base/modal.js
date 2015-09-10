@@ -20,9 +20,25 @@ define(["base/view",
                 }
                 if (this.view) {
                     this.view.setElement(this.$('.modal-content'));
+                    this.view.on('close-modal', function(){
+                        this.close();
+                        this.$el.modal('hide');
+                        this.view.remove();
+                    }, this);
+
                     this.view.render();
                 }
+                this.postRender();
                 return this;
+            },
+
+            close: function(){
+
+            },
+
+            postRender: function(){
+
+
             },
 
             show: function(){

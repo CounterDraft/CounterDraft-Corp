@@ -40,6 +40,10 @@ var loadServer = function() {
         response.render('pages/careers');
     }).get('/faq', function(request, response) {
         response.render('pages/faq');
+    }).get('/create-account', function(request, response) {
+        response.render('pages/create-account');
+    }).get('/forgot', function(request, response) {
+        response.render('pages/forgot');
     });
 
     app.listen(app.get('port'), function() {
