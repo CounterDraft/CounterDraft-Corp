@@ -60,12 +60,12 @@ module.exports = function(grunt) {
         }
     });
     // load the copy plugin
-    grunt.loadNpmTasks('grunt-contrib-copy');
+    // grunt.loadNpmTasks('grunt-contrib-copy');
     // load the clean plugin
     // grunt.loadNpmTasks('grunt-contrib-clean');
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-concat');
+    // grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     // Load the plugin that provides the "less" task.
     
