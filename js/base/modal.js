@@ -1,5 +1,5 @@
-define(["base/view",
-        "text!modules/model/templates/model-a-tmpl.html"
+define(["./view",
+        "text!../modules/model/templates/model-a-tmpl.html"
     ],
     function(View, TemplateOne) {
         var Model = View.extend({

@@ -5,7 +5,6 @@ requirejs.config({
     waitSeconds: 12,
     paths: {
         lib: "libs",
-        text: 'libs/text',
         home: "/",
         tpl: "tpl",
         main: "main",

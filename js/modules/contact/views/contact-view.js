@@ -1,5 +1,5 @@
 define([
-        "text!modules/contact/templates/contact-form-tmpl.html",
+        "text!../templates/contact-form-tmpl.html",
         'base/view'
     ],
     function(Template,

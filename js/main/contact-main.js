@@ -1,6 +1,6 @@
 define(
-    ["modules/contact/models/contact-model",
-        "modules/contact/views/contact-view"
+    ["../modules/contact/models/contact-model",
+        "../modules/contact/views/contact-view"
     ],
     function(Model,
         ContactView) {

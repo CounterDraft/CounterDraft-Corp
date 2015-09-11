@@ -14,9 +14,9 @@
 <% include ../partials/footer.ejs %>
 <% include ../partials/js.ejs %>
 <%if (settings.env === 'production') { %>
-	<script data-main="/js/<%= mainjs %>-page.js" src="build/js/require.min.js"></script>
+	<script data-main="build/js/r/<%= mainjs %>-page.js" src="build/js/r/require.min.js"></script>
 <% } else { %>
-	<script data-main="/js/<%= mainjs %>-page.js" src="/node_modules/requirejs/require.js"></script>
+	<script data-main="js/<%= mainjs %>-page.js" src="/node_modules/requirejs/require.js"></script>
 <% } %>
 
 

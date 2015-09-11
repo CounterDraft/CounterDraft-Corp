@@ -1,3 +1,3 @@
 require(['./common-build'], function (common) {
-    require(['main/about-main']);
+    require(['./main/about-main']);
 });
