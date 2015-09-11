@@ -60,16 +60,23 @@ module.exports = function(grunt) {
         }
     });
     // load the copy plugin
-    // grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     // load the clean plugin
     // grunt.loadNpmTasks('grunt-contrib-clean');
     // Load the plugin that provides the "uglify" task.
+    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     // Load the plugin that provides the "less" task.
-    grunt.loadNpmTasks('grunt-contrib-less');
+    
+
+    // TODO: need to learn how build this shit right
+    // grunt-contrib-concat - To put files together in one
+    // grunt-contrib-copy - To copy files to your "build" folder
+    // grunt-usemin - To use the compiled js file in your html
 
     // Default task(s).
-    grunt.registerTask('default', ['copy', 'clean', 'uglify', 'less']);
+    // grunt.registerTask('default', ['copy', 'clean', 'uglify', 'less']);
     grunt.registerTask('default', ['uglify', 'less']);
 
 };
