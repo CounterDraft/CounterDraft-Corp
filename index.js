@@ -45,6 +45,8 @@ var loadServer = function() {
         response.render('pages/create-account');
     }).get('/forgot', function(request, response) {
         response.render('pages/forgot');
+    }).get('/*', function(request, response) {
+        response.render('pages/bad');
     });
 
     app.listen(app.get('port'), function() {
