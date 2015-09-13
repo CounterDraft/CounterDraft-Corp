@@ -4,16 +4,6 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        copy: {
-            build: {
-                cwd: 'js',
-                scr: ['**'],
-                dest: 'build',
-                expand: true
-
-            }
-        },
-
         clean: {
             pre: ['build'],
             post: ['build/js/base', 'build/js/main', 'build/js/modules', 'build/js/*js']
@@ -31,10 +21,70 @@ module.exports = function(grunt) {
                     src: ['node_modules/requirejs/*js'],
                     dest: 'build/js/r/require.min.js'
                 }, {
-                    src: ['build/js/libs/text.js'],
+                    src: ['build/js/r//text.js'],
                     dest: 'build/js/r/text.js'
                 }]
-            }
+            },
+
+            // templates_layouts: {
+            //     files: [{
+            //         src: ['build/views/layouts/html_corp.ejs'],
+            //         dest: 'build/views/layouts/html_corp.ejs'
+            //     }]
+            // },
+
+            // templates_pages: {
+            //     files: [{
+            //         src: ['build/views/pages/about.ejs'],
+            //         dest: 'build/views/pages/about.ejs'
+            //     }, {
+            //         src: ['build/views/pages/bad.ejs'],
+            //         dest: 'build/views/pages/bad.ejs'
+            //     }, {
+            //         src: ['build/views/pages/careers.ejs'],
+            //         dest: 'build/views/pages/careers.ejs'
+            //     }, {
+            //         src: ['build/views/pages/contact-us.ejs'],
+            //         dest: 'build/views/pages/contact-us.ejs'
+            //     }, {
+            //         src: ['build/views/pages/create-account.ejs'],
+            //         dest: 'build/views/pages/create-account.ejs'
+            //     }, {
+            //         src: ['build/views/pages/faq.ejs'],
+            //         dest: 'build/views/pages/faq.ejs'
+            //     }, {
+            //         src: ['build/views/pages/forgot.ejs'],
+            //         dest: 'build/views/pages/forgot.ejs'
+            //     }, {
+            //         src: ['build/views/pages/home.ejs'],
+            //         dest: 'build/views/pages/home.ejs'
+            //     }, {
+            //         src: ['build/views/pages/legal.ejs'],
+            //         dest: 'build/views/pages/legal.ejs'
+            //     }, {
+            //         src: ['build/views/pages/meet-the-team.ejs'],
+            //         dest: 'build/views/pages/meet-the-team.ejs'
+            //     }, {
+            //         src: ['build/views/pages/terms-of-service.ejs'],
+            //         dest: 'build/views/pages/terms-of-service.ejs'
+            //     }]
+            // },
+
+            // templates_partials: {
+            //     files: [{
+            //         src: ['build/views/partials/css.ejs'],
+            //         dest: 'build/views/partials/css.ejs'
+            //     }, {
+            //         src: ['build/views/partials/footer.ejs'],
+            //         dest: 'build/views/partials/footer.ejs'
+            //     }, {
+            //         src: ['build/views/partials/js.ejs'],
+            //         dest: 'build/views/partials/js.ejs'
+            //     }, {
+            //         src: ['build/views/partials/nav.ejs'],
+            //         dest: 'build/views/partials/nav.ejs'
+            //     }]
+            // }
         },
 
         concat: {
@@ -59,6 +109,12 @@ module.exports = function(grunt) {
 
             css: {
                 src: 'css/*less',
+                dest: 'build/'
+            },
+
+            pages: {
+                expand: true,
+                src: ['views/*/*ejs'],
                 dest: 'build/'
             }
         },
@@ -87,42 +143,42 @@ module.exports = function(grunt) {
                         exclude: [
                             "common-build"
                         ]
-                    },{
+                    }, {
                         name: "careers-page",
                         exclude: [
                             "common-build"
                         ]
-                    },{
+                    }, {
                         name: "contact-page",
                         exclude: [
                             "common-build"
                         ]
-                    },{
+                    }, {
                         name: "create-page",
                         exclude: [
                             "common-build"
                         ]
-                    },{
+                    }, {
                         name: "faq-page",
                         exclude: [
                             "common-build"
                         ]
-                    },{
+                    }, {
                         name: "forgot-page",
                         exclude: [
                             "common-build"
                         ]
-                    },{
+                    }, {
                         name: "home-page",
                         exclude: [
                             "common-build"
                         ]
-                    },{
+                    }, {
                         name: "legal-page",
                         exclude: [
                             "common-build"
                         ]
-                    },{
+                    }, {
                         name: "signin-page",
                         exclude: [
                             "common-build"
@@ -157,10 +213,7 @@ module.exports = function(grunt) {
         'uglify',
         'less',
         'clean:post'
-        
     ]);
-    // 'uglify',
-    // 'less']);
 
     // Default task(s).
     // grunt.registerTask('default', ['clean', 'uglify', 'less']);

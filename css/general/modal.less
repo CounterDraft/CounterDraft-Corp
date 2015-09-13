@@ -14,6 +14,15 @@ div#counter-modal {
             } 
         }
     }
+
+    div.retrieve-container{
+        max-height: 0;
+        .addTransition();
+        &.active{
+            max-height: 500px;
+        }
+    }
+
     div.model-tmpl-1 {}
     div.model-tmpl-2 {}
     div.model-tmpl-3 {}
