@@ -15,7 +15,7 @@ define([
             },
 
             postRender: function() {
-                this.$('input').first().focus()
+                $(this).focus();
                 $('#counter-modal').on('shown.bs.modal', $.proxy(function() {
                     document.activeElement.blur();
                     this.$(".modal-body :input:visible").first().focus();
