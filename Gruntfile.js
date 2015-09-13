@@ -112,11 +112,11 @@ module.exports = function(grunt) {
                 dest: 'build/'
             },
 
-            pages: {
-                expand: true,
-                src: ['views/*/*ejs'],
-                dest: 'build/'
-            }
+            // pages: {
+            //     expand: true,
+            //     src: ['views/*/*ejs'],
+            //     dest: 'build/'
+            // }
         },
 
         less: {
