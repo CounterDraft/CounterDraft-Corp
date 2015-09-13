@@ -68,11 +68,6 @@
     </div>
 </div>
 <script>
-$('#counter-modal').on('shown.bs.modal', function() {
-    document.activeElement.blur();
-    $(this).find(".modal-body :input:visible").first().focus();
-});
-
 $('a.active-reset').on('click', function(event) {
     $('div.retrieve-container').toggleClass('active');
 });

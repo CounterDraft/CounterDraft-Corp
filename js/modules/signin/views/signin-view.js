@@ -15,15 +15,19 @@ define([
             },
 
             postRender: function() {
-                //we don't do shit;
+                this.$('input').first().focus()
+                $('#counter-modal').on('shown.bs.modal', $.proxy(function() {
+                    document.activeElement.blur();
+                    this.$(".modal-body :input:visible").first().focus();
+                }, this));
             },
 
-            onClick: function(event){
+            onClick: function(event) {
                 event.stopPropagation();
                 event.stopImmediatePropagation();
-                switch ($(event.currentTarget).text().toUpperCase()){
+                switch ($(event.currentTarget).text().toUpperCase()) {
                     case 'SIGNIN':
-                    break;
+                        break;
                 }
             },
 
