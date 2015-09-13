@@ -69,7 +69,8 @@
 </div>
 <script>
  $('a.active-reset').on('click', function(event){
+    $('div.modal-dialog').focus();
     $('div.retrieve-container').toggleClass('active');
-    $('div#counter-modal').focus();
+    
  });
 </script>
