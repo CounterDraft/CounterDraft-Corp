@@ -92,7 +92,6 @@ module.exports = function(grunt) {
                 src: [
                     //libs NOTE- If we add more libs there need to be added to the build here;
                     'node_modules/jquery/dist/jquery.js',
-                    'node_modules/bootstrap/dist/js/bootstrap.js'
                     'node_modules/underscore/underscore.js',
                     'node_modules/backbone/backbone.js',
                     'node_modules/bootstrap/dist/js/bootstrap.js'
@@ -111,7 +110,7 @@ module.exports = function(grunt) {
             css: {
                 src: 'css/*less',
                 dest: 'build/'
-            },
+            }
 
             // pages: {
             //     expand: true,

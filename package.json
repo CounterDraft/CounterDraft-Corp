@@ -1,46 +1,46 @@
 {
-  "name": "CounterDraft-corp-site",
-  "version": "0.0.1",
-  "description": "Counter Draft Corp Site",
-  "main": "index.js",
-  "scripts": {
-    "postinstall": "grunt",
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "angular": "1.4.4",
-    "bootstrap": "3.3.5",
-    "ejs": "^2.3.1",
-    "express": "~4.9.x",
-    "express-ejs-layouts": "1.1.0",
-    "grunt": "*",
-    "grunt-cli": "*",
-    "grunt-contrib-less": "*",
-    "grunt-contrib-uglify": "*",
-    "grunt-contrib-concat": "^0.5.1",
-    "grunt-contrib-copy": "^0.8.1",
-    "grunt-contrib-clean": "*",
-    "grunt-contrib-requirejs": "^0.4.4",
-    "grunt-usemin": "^3.1.1",
-    "jquery": "2.1.4",
-    "less": "2.5.1",
-    "npm": "2.14.2",
-    "requirejs": "2.1.20",
-    "underscore": "1.8.3",
-    "backbone": "1.2.3"
-    // "googlemaps": "1.0.1"
-  },
-  "engines": {
-    "node": "0.12.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/CounterDraft/CounterDraft-Corp"
-  },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
-  "license": "MIT"
+    "name": "CounterDraft-corp-site",
+    "version": "0.0.1",
+    "description": "Counter Draft Corp Site",
+    "main": "index.js",
+    "scripts": {
+        "postinstall": "grunt",
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "angular": "1.4.4",
+        "bootstrap": "3.3.5",
+        "ejs": "^2.3.1",
+        "express": "~4.9.x",
+        "express-ejs-layouts": "1.1.0",
+        "grunt": "*",
+        "grunt-cli": "*",
+        "grunt-contrib-less": "*",
+        "grunt-contrib-uglify": "*",
+        "grunt-contrib-concat": "^0.5.1",
+        "grunt-contrib-copy": "^0.8.1",
+        "grunt-contrib-clean": "*",
+        "grunt-contrib-requirejs": "^0.4.4",
+        "grunt-usemin": "^3.1.1",
+        "jquery": "2.1.4",
+        "less": "2.5.1",
+        "npm": "2.14.2",
+        "requirejs": "2.1.20",
+        "underscore": "1.8.3",
+        "backbone": "1.2.3",
+        "googlemaps": "1.0.1"
+    },
+    "engines": {
+        "node": "0.12.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/CounterDraft/CounterDraft-Corp"
+    },
+    "keywords": [
+        "node",
+        "heroku",
+        "express"
+    ],
+    "license": "MIT"
 }
