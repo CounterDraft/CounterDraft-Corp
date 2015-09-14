@@ -109,6 +109,31 @@ div.dark-section {
     }
 }
 
+div#counter-load {
+    display: none;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    opacity: .5;
+    &.active {
+        display: block;
+    }
+    .counter-loader {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 64px;
+        height: 64px;
+    }
+}
+
 .apple-message-box {
     position: relative;
     z-index: -1;

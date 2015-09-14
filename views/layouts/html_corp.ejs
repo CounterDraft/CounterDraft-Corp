@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" data-framework="angularjs">
+
 <head>
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <% include ../partials/css.ejs %>
 </head>
+
 <body>
-<article id="counter-<%= articleID %>">
-  <% include ../partials/nav.ejs %>
-  <%- body %>
-</article>
+    <article id="counter-<%= articleID %>">
+        <% include ../partials/nav.ejs %>
+            <%- body %>
+    </article>
 </body>
 <% include ../partials/footer.ejs %>
-<% include ../partials/js.ejs %>
-<%if (settings.env === 'production') { %>
-	<script data-main="build/js/r/<%= mainjs %>-page.js" src="build/js/r/require.min.js"></script>
-<% } else { %>
-	<script data-main="js/<%= mainjs %>-page.js" src="/node_modules/requirejs/require.js"></script>
-<% } %>
+    <% include ../partials/js.ejs %>
+        <%if (settings.env === 'production') { %>
+            <script data-main="build/js/r/<%= mainjs %>-page.js" src="build/js/r/require.min.js"></script>
+            <% } else { %>
+                <script data-main="js/<%= mainjs %>-page.js" src="/node_modules/requirejs/require.js"></script>
+                <% } %>
+                    <div id="counter-modal" class="modal fade" role="dialog"></div>
+                    <div id="counter-load">
+                    	<div class="counter-loader"></div>
+                    </div>
 
-
-<div id="counter-modal" class="modal fade" role="dialog"></div>
 </html>

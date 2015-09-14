@@ -22,6 +22,20 @@ window.Counter = {
         }
 
     },
+
+    showLoader: function(shouldShow) {
+        var $loader = $('#counter-load');
+        var className = 'active';
+        if (shouldShow === true) {
+            $loader.toggleClass(className);
+        } else if (shouldShow === false) {
+            $loader.removeClass(className);
+        } else {
+            $loader.toggleClass(className);
+        }
+        return false;
+    },
+
     googleAnalytics: {
         ga: function() {
             console.log('loaded' + arguments);
