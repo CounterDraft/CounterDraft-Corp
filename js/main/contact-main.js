@@ -8,9 +8,12 @@ define(
         console.log('contact-main section');
         Counter.Navigation.set(title);
 
+        Counter.showLoader(true);
         var contactView = new ContactView({
             model: new Model()
         });
 
         $('.counter-page-header').first().append(contactView.render().$el);
+        
+        Counter.showLoader(false);
     });

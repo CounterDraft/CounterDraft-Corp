@@ -7,10 +7,14 @@ define(["../modules/create/models/create-model",
 
     var createModel = new Model({});
 
+    Counter.showLoader(true);
+
     var createAccountView = new CreateAccountView({
     	model: createModel,
     	el: $('.create-account-container')
     }).render();
+
+    Counter.showLoader(false);
 
 
 
