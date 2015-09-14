@@ -1,5 +1,5 @@
 define(["./view",
-        "text!../modules/model/templates/model-a-tmpl.html"
+        "text!../modules/modal/templates/modal-a-tmpl.html"
     ],
     function(View, TemplateOne) {
         var Model = View.extend({

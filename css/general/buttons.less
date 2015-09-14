@@ -1,5 +1,4 @@
 //styling for action button
-
 .primary {
     &.btn {
         .box-shadow(-1px, 0, 2px, 0.2);
@@ -13,9 +12,9 @@
         &:hover {
             opacity: .8;
         }
-        i{
+        i {
             position: relative;
-            top:3px;
+            top: 3px;
         }
         // @media screen and (max-width: @bootstrap-med) {
         //     .text-size-small;
@@ -23,7 +22,7 @@
     }
 }
 
-.model-secondary{
+.model-secondary {
     &.btn-modal {
         font-size: 35px;
         color: white !important;
@@ -33,7 +32,6 @@
             opacity: .8;
         }
     }
-
 }
 
 .secondary {
@@ -43,7 +41,7 @@
         // .text-shadow(-1px, 0, 0, 0.2);
         // .gradient(top, @clientColorLightestGray, darken(@clientColorLightestGray, 20%));
         .text-size-larger;
-        background-color:@color-secondary-0;
+        background-color: @color-secondary-0;
         color: white !important;
         border: none;
         height: 50px;
@@ -61,18 +59,20 @@
     &.btn {
         .box-shadow(-1px, 0, 2px, 0.2);
         .border-radius();
+        height: 40px;
+        padding: .3em;
+        .text-size-larger;
         border: none;
         color: white;
+        i{
+            color: white;
+        }
+      
         background-color: @color-secondary-0;
         &:hover {
             opacity: .8;
-            // background-color: @color-secondary-0!important;
             color: white;
         }
-        // .text-size-larger;
-        // @media screen and (max-width: @bootstrap-med) {
-        //     .text-size-small;
-        // }
     }
 }
 
@@ -85,15 +85,15 @@ button.quaternary {
     cursor: auto;
     .text-size-larger;
     @media screen and (max-width: @bootstrap-med) {
-            .text-size-small;
-        }
+        .text-size-small;
+    }
 }
 
 .btn.nmb {
     margin-bottom: 0;
 }
 
-a.btn{
+a.btn {
     padding: .5em;
 }
 
