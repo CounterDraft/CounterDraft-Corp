@@ -13,7 +13,7 @@ module.exports = function(grunt) {
             options: {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
-            build: {
+            js: {
                 files: [{
                     src: 'build/js/min/<%= pkg.name %>.js',
                     dest: 'build/js/min/<%= pkg.name %>.min.js'
@@ -122,14 +122,16 @@ module.exports = function(grunt) {
         less: {
             compile: {
                 options: {
+                    compress: true,
                     strictMath: true,
                     sourceMap: true,
                     outputSourceFiles: true,
                     sourceMapURL: '<%= pkg.name %>.css.map',
                     sourceMapFilename: 'build/css/<%= pkg.name %>.css.map'
                 },
-                src: 'css/counter-main.less',
-                dest: 'build/css/<%= pkg.name %>.min.css'
+                files: {
+                    'build/css/<%= pkg.name %>.min.css': 'css/counter-main.less'
+                }
             }
         },
 
@@ -210,8 +212,8 @@ module.exports = function(grunt) {
         'copy',
         'requirejs',
         'concat',
-        'uglify',
         'less',
+        'uglify',
         'clean:post'
     ]);
 
