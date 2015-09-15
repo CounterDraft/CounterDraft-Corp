@@ -1,7 +1,6 @@
 "use restrict"; // restrict mode for JavaScript;
 
 requirejs.config({
-    baseUrl: "/js/",
     waitSeconds: 12,
     paths: {
         lib: "libs",
