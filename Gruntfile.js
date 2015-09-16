@@ -6,7 +6,13 @@ module.exports = function(grunt) {
 
         clean: {
             pre: ['build'],
-            post: ['build/js/base', 'build/js/main', 'build/js/modules', 'build/js/*js']
+            post: ['build/js/base',
+                'build/js/main',
+                'build/js/modules',
+                'build/js/*js',
+                'build/css/css',
+                'build/css/*less'
+            ]
         },
 
         uglify: {
