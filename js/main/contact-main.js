@@ -5,7 +5,6 @@ define(
     function(Model,
         ContactView) {
         var title = 'contact';
-        console.log('contact-main section');
         Counter.Navigation.set(title);
 
         Counter.showLoader(true);
