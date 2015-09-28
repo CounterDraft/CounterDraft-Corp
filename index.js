@@ -3,6 +3,7 @@ var express = require('express');
 var expressLayouts = require('express-ejs-layouts');
 var npm = require("npm");
 var app = express();
+var router = require('./router');
 
 
 var loadServer = function() {
@@ -16,38 +17,17 @@ var loadServer = function() {
 
     // defaults to 'html_corp' if not defined in the render();
     app.set('layout', 'layouts/html_corp');
-    
+
     //Pass in Environmental Variables.
-    if(process.env){
+    if (process.env) {
         app.settings.env = process.env.MODE;
         app.settings.package_name = process.env.npm_package_name;
     }
 
     app.use(expressLayouts);
 
-    app.get('/', function(request, response) {
-        response.render('pages/home');
-    }).get('/about', function(request, response) {
-        response.render('pages/about');
-    }).get('/meet-the-team', function(request, response) {
-        response.render('pages/meet-the-team');
-    }).get('/contact-us', function(request, response) {
-        response.render('pages/contact-us');
-    }).get('/terms-of-service', function(request, response) {
-        response.render('pages/terms-of-service');
-    }).get('/legal', function(request, response) {
-        response.render('pages/legal');
-    }).get('/careers', function(request, response) {
-        response.render('pages/careers');
-    }).get('/faq', function(request, response) {
-        response.render('pages/faq');
-    }).get('/create-account', function(request, response) {
-        response.render('pages/create-account');
-    }).get('/forgot', function(request, response) {
-        response.render('pages/forgot');
-    }).get('/*', function(request, response) {
-        response.render('pages/bad');
-    });
+    //Adding web routes;
+    app.use('', router);
 
     app.listen(app.get('port'), function() {
         console.log('Node app is running on port', app.get('port'));

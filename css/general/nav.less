@@ -9,19 +9,35 @@ nav.counter-nav {
         * {
             .page-title;
             font-weight: bold;
-            color:white;
+            color: white;
         }
     }
-    
     .navbar-toggle {
         border: none!important;
         .box-shadow();
-        &:hover, &:focus{
-                background-color: @color-primary-4;;
+        &:hover,
+        &:focus {
+            background-color: @color-primary-4;
+            ;
         }
         .icon-bar {
             background-color: white;
             border: none!important;
         }
     }
+    .nav-div {
+        background-color: white;
+        margin: 0 5px 0 5px;
+        padding-top: 2em;
+        width: 1px;
+    }
+    @media screen and (max-width: @bootstrap-med) {
+        .nav-div {
+            margin: 5px 0 5px 1em;
+            padding: 0;
+            height: 1px;
+            width: 75px;
+        } 
+    }
+
 }

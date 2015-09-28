@@ -18,6 +18,11 @@ window.Counter = {
             $('ul.navbar-nav li').removeClass('active');
             $('ul.navbar-nav li.' + title + '-nav').addClass('active');
             //add other navgation items if needed.
+        },
+
+        authState: function(){
+            var storage = window.localStorage;
+            console.log(storage);
         }
 
     },
