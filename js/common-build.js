@@ -15,8 +15,9 @@ requirejs.config({
 window.Counter = {
     Navigation: {
         set: function(title) {
-            $('ul.navbar-nav li').removeClass('active');
-            $('ul.navbar-nav li.' + title + '-nav').addClass('active');
+            $('.counter-nav .navbar-nav a').removeClass('active');
+            $('.counter-nav .navbar-nav a.' + title + '-nav').addClass('active');
+            console.log('counter-nav .navbar-nav a.' + title + '-nav');
             //add other navgation items if needed.
         },
 

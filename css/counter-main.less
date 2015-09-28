@@ -66,11 +66,25 @@ body {
 }
 
 .counter-a-link-0 {
+    .addTransition();
     color: white!important;
-    &:hover {
+    &:hover,
+    &.active {
         .box-shadow(-1px, 0, 2px, 0.2);
         .border-radius();
         background: @color-secondary-0!important;
+    }
+    @media screen and (max-width: @bootstrap-med) {
+        &.active {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    }
+    @media screen and (min-width: @bootstrap-med) {
+        &.active {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
     }
 }
 
