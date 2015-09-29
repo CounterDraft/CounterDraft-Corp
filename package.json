@@ -9,6 +9,7 @@
     },
     "dependencies": {
         "angular": "1.4.4",
+        "unirest": "^0.4.2",
         "http": "*",
         "bootstrap": "3.3.5",
         "ejs": "^2.3.1",

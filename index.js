@@ -3,7 +3,7 @@ var express = require('express');
 var expressLayouts = require('express-ejs-layouts');
 var npm = require("npm");
 var app = express();
-var router = require('./router');
+var router = require('./app/router');
 
 
 var loadServer = function() {
