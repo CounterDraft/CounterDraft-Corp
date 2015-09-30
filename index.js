@@ -23,6 +23,7 @@ var loadServer = function() {
     if (process.env) {
         app.settings.env = process.env.MODE;
         app.settings.package_name = process.env.npm_package_name;
+        app.settings.web_app = process.env.web_app;
     }
 
     app.use(expressLayouts);
