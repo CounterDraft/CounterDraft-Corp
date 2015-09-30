@@ -16,13 +16,10 @@
                 <li><a class="counter-a-link-0 faq-nav" href="/faq" onclick="Counter.googleAnalytics.ga('send', 'event', 'Navbar', 'home', 'FAQ');">FAQ</a></li>
                 <li><a class="counter-a-link-0 how_to_win-nav" href="/#how_to_win" onclick="Counter.googleAnalytics.ga('send', 'event', 'Navbar', 'home', 'How To Win');">How to play</a></li>
                 <li><a class="counter-a-link-0 who_are_we-nav" href="/#who_are_we" onclick="Counter.googleAnalytics.ga('send', 'event', 'Navbar', 'home', 'Who Are We');">Who are we</a></li>
-                <% if (isAuthorized){ %>
-                    <li><a class="counter-a-link-0 dashboard-nav" href="<%= settings.webApp %>/dashboard">Dashboard</a></li>
-                <% }else{ %>
-                    <li><a class="counter-a-link-0 login-nav" onclick="Counter.showSignin();">Log in</a></li>
-                    <li class="nav-div">&nbsp;</li>
-                    <li><a class="counter-a-link-0 create-nav" href="/create-account">Sign up</a></li>
-                <% } %>
+                <li class="dashboard-list"><a class="counter-a-link-0 dashboard-nav" href="<%= settings.webApp %>/dashboard">Dashboard</a></li>
+                <li class="sign-list"><a class="counter-a-link-0 login-nav" onclick="Counter.showSignin();">Log in</a></li>
+                <li class="nav-div sign-list">&nbsp;</li>
+                <li class="sign-list"><a class="counter-a-link-0 create-nav" href="/create-account">Sign up</a></li>
             </ul>
         </div>
     </div>

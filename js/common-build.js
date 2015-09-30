@@ -16,14 +16,13 @@ $(document).ready(function() {
     var checkLogin = function() {
         $.ajax({
             dataType: "json",
-            type: "POST",
+            type: "GET",
             url: "http://www.counterdraft.systems/api/login/",
             data: {},
-            success: function(err) {
-                console.log(err);
-            },
-            error: function(err) {
-                console.log(err);
+            success: function(obj) {
+                if(obj.user){
+                    $('#navbar').addClass('show-dashboard');
+                }
             }
 
         });

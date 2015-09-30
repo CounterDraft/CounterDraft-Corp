@@ -5,6 +5,19 @@ nav.counter-nav {
     // position: absolute;
     border: none;
     margin: 0;
+    #navbar {
+        .dashboard-list {
+            display: none;
+        }
+        &.show-dashboard {
+            .dashboard-list {
+                display: block;
+            }
+            .sign-list {
+                display: none;
+            }
+        }
+    }
     .navbar-brand {
         * {
             .page-title;
@@ -16,7 +29,7 @@ nav.counter-nav {
         border: none!important;
         .box-shadow();
         &:hover,
-        &:focus{
+        &:focus {
             background-color: @color-primary-4;
         }
         .icon-bar {
@@ -36,7 +49,6 @@ nav.counter-nav {
             padding: 0;
             height: 1px;
             width: 75px;
-        } 
+        }
     }
-
 }
