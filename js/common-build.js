@@ -12,6 +12,25 @@ requirejs.config({
     }
 });
 
+$(document).ready(function() {
+    var checkLogin = function() {
+        $.ajax({
+            dataType: "json",
+            type: "POST",
+            url: "http://www.counterdraft.systems/api/login/",
+            data: {},
+            success: function(err) {
+                console.log(err);
+            },
+            error: function(err) {
+                console.log(err);
+            }
+
+        });
+    }();
+
+});
+
 window.Counter = {
     Navigation: {
         set: function(title) {
@@ -21,7 +40,7 @@ window.Counter = {
             //add other navgation items if needed.
         },
 
-        authState: function(){
+        authState: function() {
             var storage = window.localStorage;
             console.log(storage);
         }

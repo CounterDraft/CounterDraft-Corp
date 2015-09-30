@@ -11,6 +11,7 @@ var loadServer = function() {
 
     app.use(express.static(__dirname));
 
+
     // views is directory for all template files
     app.set('views', __dirname + '/views');
     app.set('view engine', 'ejs');
@@ -28,6 +29,7 @@ var loadServer = function() {
 
     //Adding web routes;
     app.use('', router);
+    // app.use(cors);
 
     app.listen(app.get('port'), function() {
         console.log('Node app is running on port', app.get('port'));
