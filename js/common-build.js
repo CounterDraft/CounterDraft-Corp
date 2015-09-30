@@ -21,6 +21,7 @@ $(document).ready(function() {
             data: {},
             success: function(obj) {
                 if(obj.user){
+                    console.log('adding show-dashboard');
                     $('#navbar').addClass('show-dashboard');
                 }
             }
