@@ -34,6 +34,9 @@
 
  routerWeb.use(function timeLog(req, res, next) {
      res.locals.isAuthorized = false;
+     res.locals.MODE = process.env.MODE;
+     res.locals.package_name = process.env.npm_package_name;
+     res.locals.web_app = process.env.web_app;
      next();
  });
 
