@@ -106,8 +106,8 @@ div.dark-section {
     position: relative;
     overflow: hidden;
     text-align: center;
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 250px;
 
     .box-shadow();
     .border-radius();
@@ -155,7 +155,6 @@ div#counter-load {
     }
 }
 hr.main-section{
-    // @x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5
     .box-shadow(0px, 1px, 5px, .5);
 }
 
@@ -200,6 +199,18 @@ hr.main-section{
         color: white !important;
         @media screen and (max-width: @bootstrap-med) {
             .text-size-regular;
+        }
+    }
+}
+
+//my bootstraps;
+.col-xs-mAuto{
+    @media screen and (max-width: @bootstrap-med) {
+        margin-right: auto;
+        margin-left: auto;
+        > div{
+            margin-right: auto;
+            margin-left: auto;
         }
     }
 }
