@@ -149,12 +149,27 @@ div#counter-load {
         height: 64px;
     }
 }
+hr.main-section{
+    // @x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5
+    .box-shadow(0px, 1px, 5px, .5);
+}
 
 .widget-border{
     .border-radius();
     background-color: @clientColorLightGray;
     padding: 1em;
 
+}
+
+.counter-list-page-title{
+    list-style: none;
+    padding: 0;
+    li{
+        padding: .3em;
+        border-bottom: 1px solid @clientColorLightGray;
+         .counter-page-title;
+         color: @color-primary-3;
+    }
 }
 
 .apple-message-box {

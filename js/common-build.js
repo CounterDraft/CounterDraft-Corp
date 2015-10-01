@@ -21,7 +21,6 @@ $(document).ready(function() {
             url: "http://app.counterdraft.com/api/login/",
             data: {},
             success: function(obj) {
-                console.log(obj);
                 if(obj.user){
                     console.log('adding show-dashboard');
                     $('#navbar').addClass('show-dashboard');

@@ -1,3 +1,5 @@
+@import "tools";
+
 .text-padded-large {
     padding-bottom: 20px;
 }
@@ -78,6 +80,13 @@
 .page-title {
     .text-size-largest;
     .text-weight-heavy;
+}
+
+.counter-page-title{
+    .page-title;
+    color: @color-secondary-0;
+    // @x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5
+    .text-shadow(0px, 1px, 1px, 0.4);
 }
 
 .page-title-1 {
