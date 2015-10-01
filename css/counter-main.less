@@ -102,9 +102,13 @@ div.dark-section {
     background: @counter-dark-section;
 }
 
-.e-holder {
+.e-holder, .pic-box {
     position: relative;
     overflow: hidden;
+    text-align: center;
+    height: 200px;
+    width: 200px;
+
     .box-shadow();
     .border-radius();
     h2 {
@@ -117,12 +121,13 @@ div.dark-section {
         color: white;
         background: @color-secondary-0;
     }
-    text-align: center;
-    height: 200px;
-    width: 200px;
+    
     @media screen and (max-width: @bootstrap-med) {
         margin-bottom: 1em;
     }
+}
+.pic-box h2 {
+    padding: 1em;
 }
 
 div#counter-load {
