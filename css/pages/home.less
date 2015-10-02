@@ -6,12 +6,11 @@ article#counter-home {
             padding: 1em;
             margin: 0;
         }
-        
         @media screen and (max-width: @bootstrap-med) {
             h1.bottom-home-title {
                 position: relative;
                 bottom: 20px;
-                padding:0;
+                padding: 0;
             }
         }
         * {
@@ -22,5 +21,10 @@ article#counter-home {
         padding-top: 1em;
         padding-bottom: 1em;
         line-height: 20px;
+    }
+    @media screen and (max-width: @bootstrap-med) {
+        .container .pic-box {
+            float: none !important;
+        }
     }
 }
