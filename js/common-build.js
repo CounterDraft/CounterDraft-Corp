@@ -13,22 +13,22 @@ requirejs.config({
 });
 
 $(document).ready(function() {
-    var checkLogin = function() {
-        $.ajax({
-            dataType: "json",
-            type: "GET",
-            //TODO: need to get this from backend.
-            url: "http://app.counterdraft.com/api/login/",
-            data: {},
-            success: function(obj) {
-                if(obj.user){
-                    console.log('adding show-dashboard');
-                    $('#navbar').addClass('show-dashboard');
-                }
-            }
+    // var checkLogin = function() {
+    //     $.ajax({
+    //         dataType: "json",
+    //         type: "GET",
+    //         //TODO: need to get this from backend.
+    //         url: "http://app.counterdraft.com/api/account/login/",
+    //         data: {},
+    //         success: function(obj) {
+    //             if(obj.user){
+    //                 console.log('adding show-dashboard');
+    //                 $('#navbar').addClass('show-dashboard');
+    //             }
+    //         }
 
-        });
-    }();
+    //     });
+    // }();
 });
 
 window.Counter = {
