@@ -7,7 +7,7 @@
     <% include ../partials/css.ejs %>
 </head>
 
-<body>
+<body ng-app="app-<%= articleID %>">
     <article id="counter-<%= articleID %>">
         <% include ../partials/nav.ejs %>
             <%- body %>
@@ -16,13 +16,13 @@
 <% include ../partials/footer.ejs %>
     <% include ../partials/js.ejs %>
         <%if (settings.env === 'production') { %>
-            <script data-main="build/js/r/<%= mainjs %>-page.js" src="build/js/r/require.min.js"></script>
-            <% } else { %>
-                <script data-main="js/<%= mainjs %>-page.js" src="/node_modules/requirejs/require.js"></script>
-                <% } %>
-                    <div id="counter-modal" class="modal fade" role="dialog"></div>
-                    <div id="counter-load">
-                    	<div class="counter-loader"></div>
-                    </div>
+            <script type="text/javascript" src="build/js/r/main/<%= mainjs %>-main.js"></script>
+        <% } else { %>
+            <script type="text/javascript" src="js/main<%= mainjs %>-main.js"></script>
+         <% } %>
+<div id="counter-modal" class="modal fade" role="dialog"></div>
+<div id="counter-load">
+    <div class="counter-loader"></div>
+</div>
 
 </html>
