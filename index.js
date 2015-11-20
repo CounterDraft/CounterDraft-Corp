@@ -21,7 +21,7 @@ var launchApp = function() {
 
     //Pass in Environmental Variables.
     if (process.env) {
-        app.settings.env = process.env.MODE;
+        app.settings.env = process.env.env;
         app.settings.package_name = process.env.npm_package_name;
         app.settings.web_app = process.env.web_app;
     }
@@ -38,7 +38,7 @@ var launchApp = function() {
 }
 
 
-if (process.env.MODE === 'production') {
+if (process.env.env === 'production') {
     console.log('Creating the build, please wait...');
     var grunt = require("grunt");
     grunt.cli({
@@ -51,38 +51,6 @@ if (process.env.MODE === 'production') {
         launchApp();
     });
 } else {
-    console.log('Bypassing build we are in ' + process.env.MODE + ' please wait...');
+    console.log('Bypassing build we are in ' + process.env.env + ' please wait...');
     launchApp();
 }
-
-// var buildRun = function() {
-//     var grunt = require('grunt');
-//     console.log('Running build, please wait...');
-//     grunt.tasks('default');
-// }
-
-// console.log('Updateing packages, please wait...');
-// npm.load({
-//     "dev": true
-// }, function(err) {
-//     // catch errors
-//     npm.commands.install(function(er, data) {
-//         if (er) {
-//             console.log('Failed to update packages ' + er);
-//         }
-
-//         if (process.env.MODE === 'development') {
-//             loadServer();
-//         } else if (process.env.MODE === 'production') {
-//             loadServer();
-//         } else {
-//             console.log('MODE not set, ex. MODE=development or MODE=production');
-//             console.log('Running in development mode.');
-//             loadServer();
-//         }
-
-//     });
-//     npm.on("log", function(message) {
-//         console.log(message);
-//     });
-// });

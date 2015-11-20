@@ -1,92 +1,25 @@
-<div class="img-home counter-page-header-1">
-    <div class="col-xs-12 text-center">
-        <h1>Small Games But Real Money!</h1>
-    </div>
-    <div class="col-xs-12 text-center">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-    </div>
-    <div class="col-xs-12 text-center">
-        <h1 class="bottom-home-title col-xs-12 ">Its <span class="counter-bold">Fantasy Gaming</span>, But Feels Like A Poker Game.</h1>
-        <div class="col-xs-12">
-            <a href="/create-account" class="btn button primary" style="width:200px;">Play For Free &nbsp;<i class="icon-chevron-right"></i></a>
+<section ng-controller="homeController as ctrl" class="main">
+    <div class="top-header">
+        <h1>PLAY DAILY FANTASY SPORTS WITH COUNTERDRAFT</h1></div>
+    <form class="home-body" ng-submit="ctrl.submit()">
+        <div class="body-section">1</div>
+        <div class="body-section">2</div>
+        <div class="body-section">3</div>
+        <div class="body-button-wrapper">
+            <button class="btn primary" type="submit">START HERE</button>
         </div>
-    </div>
-</div>
-<div class="light-section container">
-    <div class="col-xs-12">
-        <h2 class="text-center counter-page-title">Expert fantasy sports players, ex-online poker players, new skilled players, a beautiful interface, and cutting edge development. We are all that and more.</h2>
-    </div>
-    <div class="col-xs-12">
-        <div class="col-xs-12 widget-border text-center">
-            <p class="module-title">Are you tried of playing fantasy sports that cost $2, but nearly impossible to win? Enter CounterDraft. We offer smaller games with skilled players. Games are never bigger then 27 players. You set the entry fee, sport, and game type. Entry fees can be as low as $1 or up to $1000. Don't play with the massives, play with the pro's.</p>
+    </form>
+    <hr>
+    <div class="offer-section">
+    	<span>NFL</span>
+        <hr><span>NBA</span>
+        <hr><span>MLB</span>
+        <hr><span>NHL</span>
+        <hr><span>PGA</span>
+        <hr><span>GFB</span>
+        <hr><span>NFL</span>
+        <hr><span>MMA</span>
+        <hr><span>BOXING</span>
         </div>
-    </div>
-    <div class="col-xs-12">&nbsp;</div>
-    <div class="col-xs-12">
-        <ul class="counter-list-page-title">
-            <li>Smaller games.</li>
-            <li>Big payouts.</li>
-            <li>Skilled players.</li>
-            <li>Professional gaming environment.</li>
-        </ul>
-    </div>
-</div>
-<div class="how-to-win dark-section" id="how_to_win">
-    <div class="">
-        <div class="col-xs-12 text-center">
-            <h2 class="page-title-1 ">How to play</h2>
-        </div>
-        <div class="container">
-            <div class="col-xs-mAuto col-xs-12 col-sm-6">
-                <div class="pic-box">
-                    <h2 name="title" class="to-top">Sign up for a free account</h2></div>
-            </div>
-            <div class="col-xs-mAuto col-xs-12 col-sm-6">
-                <div class="pic-box pull-right">
-                    <h2 name="title" class="to-top">Deposit funds</h2></div>
-            </div>
-        </div>
-        <div class="col-xs-12">&nbsp;</div>
-        <div class="container">
-            <div class="col-xs-mAuto col-sm-offset-0 col-xs-12 col-sm-6">
-                <div class="pic-box">
-                    <h2 name="title" class="to-top">Pick your lineup</h2></div>
-            </div>
-            <div class="col-xs-mAuto col-sm-offset-0 col-xs-12 col-sm-6">
-                <div class="pic-box pull-right">
-                    <h2 name="title" class="to-top">Watch the games</h2></div>
-            </div>
-        </div>
-        <div class="col-xs-12">&nbsp;</div>
-        <div class="container">
-            <div class="col-xs-mAuto col-sm-offset-0 col-xs-12 col-sm-6">
-                <div class="pic-box">
-                    <h2 name="title" class="to-top">Get your final score</h2></div>
-            </div>
-            <div class="col-xs-mAuto col-sm-offset-0 col-xs-12 col-sm-6">
-                <div class="pic-box pull-right">
-                    <h2 name="title" class="to-top">Claim your winnings</h2></div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="how-to-win light-section container" id="who_are_we">
-    <div class="container">
-        <div class="col-xs-12 text-center">
-            <h2 class="page-title-1 ">Who are we</h2>
-        </div>
-    </div>
-</div>
-
-<%- contentFor('title') %>CounterDraft<%- contentFor('mainjs') %>home<%- contentFor('articleID') %>home
+</section>
+<%- contentFor('title') %>CounterDraft<%- contentFor('mainjs') %>home<%- contentFor('articleID') %>homenav

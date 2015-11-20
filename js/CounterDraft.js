@@ -1,3 +1,10 @@
 "use strict";
 
-console.log('this is the loading of main object for counterdraft');
+if(typeof angular != 'undefined'){
+	window.App = angular.module('app-counterdraft', []);
+}else{
+	console.error('failed to load application');
+}
+
+
+

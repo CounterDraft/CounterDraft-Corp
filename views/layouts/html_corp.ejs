@@ -1,28 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" data-framework="angularjs">
-
 <head>
     <title><%= title %> | A Online Fantasy Sport Experience</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <% include ../partials/css.ejs %>
 </head>
-
-<body ng-app="app-<%= articleID %>">
+<body ng-app="app-counterdraft">
     <article id="counter-<%= articleID %>">
         <% include ../partials/nav.ejs %>
-            <%- body %>
+        <%- body %>
     </article>
 </body>
 <% include ../partials/footer.ejs %>
-    <% include ../partials/js.ejs %>
-        <%if (settings.env === 'production') { %>
-            <script type="text/javascript" src="build/js/r/main/<%= mainjs %>-main.js"></script>
-        <% } else { %>
-            <script type="text/javascript" src="js/main<%= mainjs %>-main.js"></script>
-         <% } %>
+<% include ../partials/js.ejs %>
 <div id="counter-modal" class="modal fade" role="dialog"></div>
 <div id="counter-load">
     <div class="counter-loader"></div>
 </div>
-
 </html>

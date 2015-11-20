@@ -1,10 +1,12 @@
 <%if (settings.env === 'production') { %>
     <script type="text/javascript" src="build/js/min/<%= package_name %>.min.js"></script>
-    	<!-- <script type="text/javascript" src="build/js/CounterDraft-corp-site.min.js"></script> -->
+   	 <!-- loads page javascript -->
+    <script type="text/javascript" src="build/js/r/main/<%= mainjs %>-main.js"></script>
     <% } else { %>
+    	<script type="text/javascript" src="/node_modules/angular/angular.js"></script>
     	<script type="text/javascript" src="/js/CounterDraft.js"></script>
         <script type="text/javascript" src="/node_modules/jquery/dist/jquery.js"></script>
-        <script type="text/javascript" src="/node_modules/underscore/underscore.js"></script>
-        <script type="text/javascript" src="/node_modules/backbone/backbone.js"></script>
         <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <!-- loads page javascript -->
+        <script type="text/javascript" src="js/main/<%= mainjs %>-main.js"></script>
 <% } %>
