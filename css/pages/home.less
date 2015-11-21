@@ -1,3 +1,31 @@
 article#counter-home {
 
+	.body-section:not(:last-child){
+		min-height: 300px;
+		padding: 0 1em 1em 1em;
+		margin-bottom: 1em;
+		&:not(:last-child){
+			border-left: 1px solid black;
+		}
+	}
+	div.offer-mini{
+		margin-right: 2%;
+		margin-bottom: 1em;
+		min-width: 65px;
+
+		&:not(:last-child){
+			border-right: 2px solid black;
+		}
+	}
+	div.off-section{
+		min-height: 300px;
+	}
+	i.round{
+		background: @color-secondary-0;
+		color: white;
+	}
+
+	h3{
+		white-space: nowrap;
+	}
 }
