@@ -1,11 +1,15 @@
 article#counter-home {
 
-	.body-section:not(:last-child){
-		min-height: 300px;
+	.body-section{
+		min-height: 375px;
 		padding: 0 1em 1em 1em;
 		margin-bottom: 1em;
 		&:not(:last-child){
 			border-left: 1px solid black;
+		}
+		img{
+			width: 100%;
+    		height: 250px;
 		}
 	}
 	div.offer-mini{
@@ -23,6 +27,12 @@ article#counter-home {
 	i.round{
 		background: @color-secondary-0;
 		color: white;
+	}
+	.counter-icon-apple-store, .counter-icon-google-play{
+		display: block;
+    	background-size: cover;
+    	cursor: auto;
+    	margin: 0;
 	}
 
 	h3{
