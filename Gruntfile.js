@@ -93,13 +93,14 @@ module.exports = function(grunt) {
             // }
         },
 
+
         concat: {
             libsJS: {
                 src: [
                     //libs NOTE- If we add more libs there need to be added to the build here;
+                    '/node_modules/angular/angular.js',
                     'node_modules/jquery/dist/jquery.js',
-                    'node_modules/underscore/underscore.js',
-                    'node_modules/backbone/backbone.js',
+                    '/js/CounterDraft.js',
                     'node_modules/bootstrap/dist/js/bootstrap.js'
                 ],
                 dest: 'build/js/min/<%= pkg.name %>.js'
@@ -216,7 +217,6 @@ module.exports = function(grunt) {
     grunt.registerTask('default', [
         'clean:pre',
         'copy',
-        'requirejs',
         'concat',
         'less',
         'uglify',
