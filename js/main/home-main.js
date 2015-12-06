@@ -9,6 +9,7 @@ if (App) {
         var dismissModal = function() {
             $('#newsletter-modal').modal('hide');
             self.isModel = false;
+            self.user = {};
         }
 
         self.showDialog = function() {
