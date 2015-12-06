@@ -1,29 +1,38 @@
 @import "tools";
 div#counter-modal {
-    .modal-content{
+    .modal-content {
         overflow: hidden;
     }
     div.model-tmpl-0 {
         div.modal-header {
             background-color: @color-secondary-0;
-            h4{
+            h4 {
                 .text-shadow();
             }
-            *{
+            * {
                 color: white;
-            } 
+            }
         }
     }
-
-    div.retrieve-container{
+    div.retrieve-container {
         max-height: 0;
         .addTransition();
-        &.active{
+        &.active {
             max-height: 500px;
         }
     }
-
     div.model-tmpl-1 {}
     div.model-tmpl-2 {}
     div.model-tmpl-3 {}
+}
+
+div.bs-counter-container {
+    // [class^="col"] {
+    //     float: none;
+    // }
+    .modal-footer > div {
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+    }
 }
