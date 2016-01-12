@@ -1,3 +1,9 @@
+"use strict";
+
+// GLOBAL Setup
+GLOBAL.config = require('./config/environment-settings');
+// End
+
 console.log('Running Project....');
 var express = require('express');
 var expressLayouts = require('express-ejs-layouts');
@@ -8,7 +14,7 @@ var router = require('./app/router');
 
 
 var launchApp = function() {
-    app.set('port', (process.env.PORT || 8080));
+    app.set('port', config.server.port);
 
     app.use(express.static(__dirname));
 
