@@ -6,7 +6,8 @@
     "scripts": {
         "postinstall": "grunt",
         "start": "node index.js",
-        "debug": "node --debug-brk index.js"
+        "debug": "node --debug index.js",
+        "debug01": "node --debug-brk index.js"
     },
     "dependencies": {
         "angular": "1.4.4",

@@ -1,6 +1,7 @@
 "use strict";
-if (App) {
-    window.App.controller('homeController', ['$http', function($http) {
+
+angular.module('app-counterdraft')
+    .controller('homeController', ['$http', function($http) {
         var self = this;
         self.isModel = false;
         self.user = {};
@@ -20,14 +21,21 @@ if (App) {
             var ifInformationIsSubmitted = true;
             alert("Infomation to be saved - " + JSON.stringify(self.user));
 
+            $http({
+                method: 'GET',
+                url: '/v2/contacts'
+            }).then(function successCallback(res) {
+                console.log(res);
+            }, function errorCallback(res) {
+                console.log('Error: ' + res);
+            });
+
+
             if (ifInformationIsSubmitted) {
-            	dismissModal();
+                dismissModal();
             }
 
             return false;
         }
 
     }]);
-} else {
-    console.error('Failed to find App object.');
-}

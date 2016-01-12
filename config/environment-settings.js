@@ -2,7 +2,7 @@ module.exports = {
     environment: process.env.MODE || 'development',
     server: {
         ip: 'localhost',
-        port: process.env.PORT || 8081
+        port: process.env.PORT || 3000
     },
     database: {
         host: 'localhost',
@@ -14,6 +14,7 @@ module.exports = {
         level: 'info',
         multipleStatements: true
     },
+    //TODO: Moved to the environment settings.
     base: {
         url: 'https://api.getbase.com',
         APIKEY: 'qq6fRS7FYRixZj2cfZE4',
@@ -21,3 +22,5 @@ module.exports = {
     },
     email: {}
 };
+
+
