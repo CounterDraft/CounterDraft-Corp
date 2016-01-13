@@ -13,6 +13,7 @@
         "angular": "1.4.4",
         "unirest": "^0.4.2",
         "http": "*",
+        "mix-objects": "*",
         "bootstrap": "3.3.5",
         "ejs": "^2.3.1",
         "express": "~4.9.x",

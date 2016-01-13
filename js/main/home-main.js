@@ -22,12 +22,12 @@ angular.module('app-counterdraft')
             alert("Infomation to be saved - " + JSON.stringify(self.user));
 
             $http({
-                method: 'GET',
+                method: 'POST',
                 url: '/v2/contacts'
             }).then(function successCallback(res) {
-                console.log(res);
+                console.log(JSON.stringify(res));
             }, function errorCallback(res) {
-                console.log('Error: ' + res);
+                console.log('Error: ' + JSON.stringify(res));
             });
 
 
