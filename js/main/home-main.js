@@ -19,15 +19,15 @@ angular.module('app-counterdraft')
         }
         self.nwSubmit = function() {
             var ifInformationIsSubmitted = true;
-            alert("Infomation to be saved - " + JSON.stringify(self.user));
+            // alert("Infomation to be saved - " + JSON.stringify(self.user));
 
             $http({
-                method: 'POST',
+                method: 'GET',
                 url: '/v2/contacts'
             }).then(function successCallback(res) {
                 console.log(JSON.stringify(res));
             }, function errorCallback(res) {
-                console.log('Error: ' + JSON.stringify(res));
+                console.log(JSON.stringify(res));
             });
 
 

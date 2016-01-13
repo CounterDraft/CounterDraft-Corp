@@ -6,11 +6,33 @@ function ContactsController() {
         switch (verb.toUpperCase()) {
                 // @post(/v2/contacts)
             case 'POST':
-                getApi('base-api').create(req, res);
+                // TODO: checks to make sure req.body has the correct information.
+                var self = this;
+                 getApi('base-api').create(req.body).then(function(user) {
+                        res.status(201).json({
+                            user: user,
+                            success: true
+                        });
+                        return;
+                    })
+                    .catch(function(err) {
+                        self.getErrorApi().setErrorWithMessage(err, 400, res);
+                        return;
+                    });
                 break;
                 // @get(/v2/contacts)
             case 'GET':
-                getApi('base-api').retrieve(req, res);
+                var self = this;
+                 getApi('base-api').retrieve(req.body).then(function(data) {
+                        res.status(201).json({
+                            user: data,
+                            success: true
+                        });
+                    })
+                    .catch(function(err) {
+                        self.getErrorApi().sendError(1004, 400, res);
+                    });
+
                 break;
                 // @put(/v2/contacts) 
             case 'PUT':

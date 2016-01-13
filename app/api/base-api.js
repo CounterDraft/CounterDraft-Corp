@@ -1,34 +1,47 @@
 "use strict";
 
+//api should return promises;
+
 function BaseApi() {
     this.tag = 'baseApi';
 
-    this.create = function(req, res){
-
-        if (req.body) {
-            res.status(201).json({
-                success: true
-            });
-        }else{
-            this.getErrorApi().sendError(1004, 400, res);
-        }
-        
+    var BASE_URL = config.base.url;
+    var CONTACT_URL = '/v2/contacts';
+    var SELF_URL = '/v2/users/self';
+    var baseHeader = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': config.base.accessToken
     }
 
-    this.retrieve = function(req, res){
-        if (req.body.username === 'admin@counterdraft.com') {
-            req.session.user = {
-                username: req.body.username,
-                permissions: ['session:*']
-            }
-            //TODO: need to makes a message.resourse file so we can keep all the strings in it.
-            res.status(200).json({
-                user: req.session.user,
-                success: true
-            });
-        }else{
-            this.getErrorApi().sendError(1001, 403, res);
-        }
+    this.create = function(user) {
+        return new Promise(function(resolve, reject) {
+            Unirest.post(BASE_URL + CONTACT_URL)
+                .header(baseHeader)
+                .send(user)
+                .end(function(response) {
+                    if (response.body && response.body.hasOwnProperty('errors') && response.body.errors.length > 0) {
+                        reject(response.body.errors[0].error.message);
+                    } else {
+                        resolve(response.body);
+                    }
+                });
+        });
+    }
+
+    this.retrieve = function(user) {
+        return new Promise(function(resolve, reject) {
+            Unirest.get(BASE_URL+ SELF_URL)
+                .header(baseHeader)
+                .send(user)
+                .end(function(response) {
+                    if (response.body && response.body.hasOwnProperty('errors') && response.body.errors.length > 0) {
+                        reject(response.body.errors[0].error.message);
+                    } else {
+                        resolve(response.body);
+                    }
+                });
+        });
     }
 }
 

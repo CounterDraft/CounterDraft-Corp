@@ -50,10 +50,10 @@ var errorList = {
 function errorApi() {
     this.tag = 'error-api';
 
-    this.errorObject = function() {
+    this.errorObject = function(msg) {
         this.language = "en";
         this.code = null;
-        this.msg = "Unknown";
+        this.msg = msg || "Unknown";
     }
 
     this.sendError = function(errorNum, status, res) {
@@ -75,8 +75,7 @@ function errorApi() {
     }
 
     this.setErrorWithMessage = function(msg, status, res) {
-        var eo = new this.errorObject();
-        eo.msg = msg;
+        var eo = new this.errorObject(msg);
         res.status(status).json({
             error: [eo],
             success: false

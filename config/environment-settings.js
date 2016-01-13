@@ -14,7 +14,6 @@ module.exports = {
         level: 'info',
         multipleStatements: true
     },
-    //TODO: Moved to the environment settings.
     base: {
         url: 'https://api.getbase.com',
         APIKEY: 'qq6fRS7FYRixZj2cfZE4',
@@ -22,7 +21,10 @@ module.exports = {
     },
     email: {},
     package_name: process.env.npm_package_name || 'test-package',
-    web_app: process.env.web_app || 'https://127.0.0.1:8081'
+    web_app: process.env.web_app || 'https://127.0.0.1:8081',
+    get: function(v){
+        return this;
+    }
 
     //TODO: make a getter fucniton for this object.
 };

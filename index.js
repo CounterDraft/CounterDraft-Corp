@@ -11,6 +11,10 @@ GLOBAL.CONTROLLER_DIR = dirBase + '/app/controllers/';
 GLOBAL.API_DIR = dirBase + '/app/api/';
 GLOBAL.BASE_DIR = dirBase + '/app/base/';
 
+GLOBAL.Promise = require('bluebird');
+GLOBAL.Q = require('q');
+GLOBAL.Unirest = require('unirest');
+
 
 GLOBAL.getController = function(controllerName) {
     var Controller = require(GLOBAL.CONTROLLER_DIR + controllerName);
@@ -57,6 +61,13 @@ var launchApp = function() {
     app.set('web_app', config.web_app);
 
     app.use(expressLayouts);
+    // app.use(function(req, res, next) {
+    //     res.header('Access-Control-Allow-Credentials', true);
+    //     res.header('Access-Control-Allow-Origin', req.headers.origin);
+    //     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    //     res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
+    //     next();
+    // });
 
     // Adding web routes;
     app.use('', router);
