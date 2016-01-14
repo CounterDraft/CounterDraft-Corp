@@ -17,7 +17,7 @@ module.exports = {
     base: {
         url: 'https://api.getbase.com',
         APIKEY: 'qq6fRS7FYRixZj2cfZE4',
-        accessToken: 'Bearer 355fbeeea15339efc362b40b7530a2e219a5ab700bf0b3e38f80e4edb0c92e23'
+        accessToken: '355fbeeea15339efc362b40b7530a2e219a5ab700bf0b3e38f80e4edb0c92e23'
     },
     email: {},
     package_name: process.env.npm_package_name || 'test-package',

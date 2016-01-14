@@ -23,13 +23,14 @@ function ContactsController() {
                 // @get(/v2/contacts)
             case 'GET':
                 var self = this;
-                 getApi('base-api').retrieve(req.body).then(function(data) {
+                 getApi('base-api').retrieve(req.body).then(function(user) {
                         res.status(201).json({
-                            user: data,
+                            user: user,
                             success: true
                         });
                     })
                     .catch(function(err) {
+                        console.log(err);
                         self.getErrorApi().sendError(1004, 400, res);
                     });
 

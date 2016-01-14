@@ -12,7 +12,6 @@ GLOBAL.API_DIR = dirBase + '/app/api/';
 GLOBAL.BASE_DIR = dirBase + '/app/base/';
 
 GLOBAL.Promise = require('bluebird');
-GLOBAL.Q = require('q');
 GLOBAL.Unirest = require('unirest');
 
 
