@@ -1,8 +1,11 @@
 "use strict";
 
 angular.module('app-counterdraft')
-    .controller('homeController', ['$http', function($http) {
+    .controller('homeController', ['$http', 'counterDraft-message-srv', function($http, messageService) {
         var self = this;
+
+        var msgElement = document.querySelector('message');
+
         self.isModel = false;
         self.user = {};
         self.NewsletterModel = "/views/templates/home/modal/newsletter-modal.html"
@@ -18,10 +21,6 @@ angular.module('app-counterdraft')
             return false;
         }
         self.nwSubmit = function() {
-            var ifInformationIsSubmitted = true;
-            // alert("Infomation to be saved - " + JSON.stringify(self.user));
-
-
 
             var testData = {
                 "items": [{
@@ -124,17 +123,20 @@ angular.module('app-counterdraft')
             $http({
                 method: 'POST',
                 url: '/v2/contacts',
-                data:  JSON.stringify(testData)
+                data: self.user
             }).then(function successCallback(res) {
+                messageService.setElement(document.querySelector('message'));
                 console.log(JSON.stringify(res));
-            }, function errorCallback(res) {
-                console.log(JSON.stringify(res));
-            });
-
-
-            if (ifInformationIsSubmitted) {
                 dismissModal();
-            }
+            }, function errorCallback(res) {
+                messageService.setElement(document.querySelector('message'));
+                console.log(JSON.stringify(res));
+                if(res.data.error && res.data.error.length > 0){
+                    messageService.sendMessage(res.data.error[0].msg, 'danger');
+                }else{
+                    messageService.sendMessage('We failed to save your information, please try again.', 'danger');
+                }
+            });
 
             return false;
         }
