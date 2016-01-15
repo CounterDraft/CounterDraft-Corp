@@ -6,7 +6,7 @@ GLOBAL.config = require('./config/environment-settings');
 GLOBAL.mix = require('mix-objects');
 
 GLOBAL.dirBase = process.env.PWD;
-GLOBAL.BASE_URL = 'http://' + config.server.ip + ':' + config.server.port + '/';
+GLOBAL.BASE_URL = 'http://' + config.get('server').ip + ':' + config.get('server').port + '/';
 GLOBAL.CONTROLLER_DIR = dirBase + '/app/controllers/';
 GLOBAL.API_DIR = dirBase + '/app/api/';
 GLOBAL.BASE_DIR = dirBase + '/app/base/';
@@ -32,7 +32,7 @@ GLOBAL.getBase = function(base) {
 
 // --------------------- End
 
-console.log('Running project in ' + config.env + ' mode.');
+console.log('Running project in ' + config.get('env') + ' mode.');
 
 var express = require('express');
 var expressLayouts = require('express-ejs-layouts');
@@ -58,12 +58,12 @@ var launchApp = function() {
     // defaults to 'html_corp' if not defined in the render();
     app.set('layout', 'layouts/html_corp');
 
-    //Pass in Environmental Variables.
+    //Pass in common Environmental Variables.
     app.settings.config = config;
-    app.set('env', config.env);
-    app.set('port', config.server.port);
-    app.set('package_name', config.package_name);
-    app.set('web_app', config.web_app);
+    app.set('env', config.get('env'));
+    app.set('port', config.get('server').port);
+    app.set('package_name', config.get('package_name'));
+    app.set('web_app', config.get('web_app'));
 
     app.use(expressLayouts);
 
@@ -77,7 +77,7 @@ var launchApp = function() {
 }
 
 
-if (config.env === 'production') {
+if (config.get('env') === 'production') {
     console.log('Creating the build, please wait...');
     var grunt = require("grunt");
     grunt.cli({
@@ -90,6 +90,6 @@ if (config.env === 'production') {
         launchApp();
     });
 } else {
-    console.log('Bypassing build we are in ' + config.env + ', please wait...');
+    console.log('Bypassing build we are in ' + config.get('env') + ', please wait...');
     launchApp();
 }

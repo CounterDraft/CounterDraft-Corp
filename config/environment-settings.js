@@ -23,8 +23,9 @@ module.exports = {
     package_name: process.env.npm_package_name || 'test-package',
     web_app: process.env.web_app || 'https://127.0.0.1:8081',
     get: function(v){
-        return this;
+        return this[v];
+    },
+    set: function(value, name){
+        this[name] = value;
     }
-
-    //TODO: make a getter fucniton for this object.
-};
+}
