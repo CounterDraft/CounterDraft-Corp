@@ -17,6 +17,14 @@
      res.render('pages/home', {});
  });
 
+ routerWeb.get('/about-us', function(req, res) {
+     res.render('pages/about-us', {});
+ });
+
+ routerWeb.get('/api-system', function(req, res) {
+     res.render('pages/api', {});
+ });
+
  routerWeb.get('/*', function(req, res, next) {
      res.redirect('/');
  });
