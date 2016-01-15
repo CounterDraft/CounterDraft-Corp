@@ -24,7 +24,7 @@ angular.module('app-counterdraft')
 
             //conditions data;
             self.user['name'] = self.user.first_name + " " + self.user.last_name;
-            self.user.address['postal_code'] = self.user.address['postal_code'].toString(); 
+            // self.user.address['postal_code'] = self.user.address['postal_code'].toString(); 
             var odata = {
                 "data": self.user
             }
