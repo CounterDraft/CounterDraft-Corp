@@ -27,7 +27,7 @@ angular.module('app-counterdraft')
                 "data": self.user
             }
             odata.data['name'] = self.user.first_name + " " + self.user.last_name;
-            odata.data.address['postal_code'] = odata.data.address['postal_code'].toString();
+            // odata.data.address['postal_code'] = odata.data.address['postal_code'].toString();
 
             $http({
                 method: 'POST',
