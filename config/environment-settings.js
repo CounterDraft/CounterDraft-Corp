@@ -1,5 +1,5 @@
 module.exports = {
-    env: process.env.MODE || 'development',
+    env: process.env.MODE || 'production',
     server: {
         ip: '127.0.0.1',
         port: process.env.PORT || 8081
