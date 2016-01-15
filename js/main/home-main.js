@@ -23,11 +23,11 @@ angular.module('app-counterdraft')
         self.nwSubmit = function() {
 
             //conditions data;
-            self.user['name'] = self.user.first_name + " " + self.user.last_name;
-            self.user.address['postal_code'] = self.user.address['postal_code'].toString(); 
             var odata = {
                 "data": self.user
             }
+            odata.data.['name'] = self.user.first_name + " " + self.user.last_name;
+            odata.data.address['postal_code'] = odata.data.address['postal_code'].toString();
 
             $http({
                 method: 'POST',
