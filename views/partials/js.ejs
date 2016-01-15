@@ -1,7 +1,5 @@
 <%if (settings.env === 'production') { %>
     <script type="text/javascript" src="build/js/min/<%= settings.package_name %>.min.js"></script>
-   	 <!-- loads page javascript -->
-    <script type="text/javascript" src="build/js/r/main/<%= mainjs %>-main.js"></script>
     <% } else { %>
     	<script type="text/javascript" src="/node_modules/angular/angular.js"></script>
     	<script type="text/javascript" src="/js/CounterDraft-common.js"></script>
