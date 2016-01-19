@@ -70,30 +70,11 @@ module.exports = function(grunt) {
         }
     });
 
-    // grunt-contrib-concat - To put files together in one
-    // grunt-contrib-copy - To copy files to your "build" folder
-    // grunt-usemin - To use the compiled js file in your html
-
-
     //load all tasks;
-    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-usemin');
-    grunt.loadNpmTasks('grunt-contrib-requirejs');
-
-    grunt.registerTask('default', [
-        'clean:pre',
-        'copy',
-        'concat',
-        'less',
-        'uglify',
-        'clean:post'
-    ]);
 
     // Default task(s).
-    // grunt.registerTask('default', ['clean', 'uglify', 'less']);
-
+    grunt.registerTask('default', [
+        'clean:pre'
+    ]);
 };

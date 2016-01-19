@@ -4,7 +4,6 @@
     "description": "Counter Draft Corp Site",
     "main": "index.js",
     "scripts": {
-        "postinstall": "grunt",
         "start": "node index.js",
         "debug": "nodemon --debug index.js",
         "debug01": "nodemon --debug-brk index.js"
@@ -27,14 +26,12 @@
         "grunt-contrib-concat": "^0.5.1",
         "grunt-contrib-copy": "^0.8.1",
         "grunt-contrib-clean": "*",
-        "grunt-contrib-requirejs": "^0.4.4",
         "grunt-usemin": "^3.1.1",
         "jquery": "2.1.4",
         "less": "2.5.1",
         "npm": "2.14.2",
         "requirejs": "2.1.20",
         "underscore": "1.8.3",
-        "backbone": "1.2.3",
         "googlemaps": "1.0.1",
         "cors": "*"
     },

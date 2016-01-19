@@ -72,24 +72,29 @@ var launchApp = function() {
     // app.use(cors);
 
     app.listen(app.get('port'), function() {
-        console.log('Visit http://127.0.0.1:' + app.get('port') + ' to start application.');
+        console.info('Visit http://127.0.0.1:' + app.get('port') + ' to start application.');
     });
 }
 
-
+var grunt = require("grunt");
 if (config.get('env') === 'production') {
-    console.log('Creating the build, please wait...');
-    var grunt = require("grunt");
+    console.info('Creating the build, please wait...');
     grunt.cli({
-        gruntfile: __dirname + "/Gruntfile.js",
+        gruntfile: __dirname + "/gProd.js",
         extra: {
             key: "run"
         }
     }, function() {
-        //callback;
         launchApp();
     });
 } else {
-    console.log('Bypassing build we are in ' + config.get('env') + ', please wait...');
-    launchApp();
+    console.info('Bypassing build we are in ' + config.get('env') + ', please wait...');
+    grunt.cli({
+        gruntfile: __dirname + "/gDev.js",
+        extra: {
+            key: "run"
+        }
+    }, function(){
+        launchApp();
+    });
 }
