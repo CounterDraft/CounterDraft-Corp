@@ -1,5 +1,65 @@
 article#counter-about-us {
+
+    .emp-holder {
+    	@media screen and (max-width: @bootstrap-large) {
+    		border-top: 1px solid lightgray;
+    		padding-top: 1em;
+    		padding-bottom: 1em;
+    		.border-radius();
+    		.box-shadow();
+        	.text-holder{
+        		box-shadow: none !important;
+        		border: none !important;
+        	}
+        	.profile-holder{
+        		.border-radius() !important;
+        	}
+    	}
+
+        .profile-holder {
+            height: 250px;
+            width: 250px;
+            padding: 0;
+            .box-shadow();
+            .border-radius-set(5px, 0, 0, 5px);
+            overflow: hidden;
+            h2 {
+                .text-size-regular;
+                text-align: center;
+                width: 250px;
+                padding: .5em;
+                margin: 0;
+                opacity: .7;
+                color: white;
+                background: @color-secondary-0;
+            }
+        }
+        .text-holder {
+            min-height: 250px;
+            border-top: 1px solid lightgray;
+            .box-shadow();
+            .border-radius-set(0, 5px, 5px, 0);
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+    }
+
     h2.logo-counter-draft {
         min-height: 182px;
+    }
+   
+    div.light-section,
+    div.dark-section {
+        padding: 60px 0px 54px 0;
+        min-height: 233px;
+    }
+    div.light-section {
+        background: transparent;
+    }
+    div.dark-section {
+        background: @color-secondary-4;
+        * {
+            color: darken(white, 30%);
+        }
     }
 }

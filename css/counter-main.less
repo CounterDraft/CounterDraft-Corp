@@ -8,15 +8,18 @@
 @import "general/modal";
 
 /*libs*/
+
 @import "../node_modules/bootstrap/less/bootstrap";
 @import "libs/glyphicons";
 
 /*pages*/
+
 @import "pages/home";
 @import "pages/about-us";
 @import "pages/api";
 
 /*common styles*/
+
 body {
     * {
         font-family: "Avenir Next W01", "AvenirNextLTPro-demi";
@@ -26,7 +29,8 @@ body {
         .body-text;
     }
 }
-section.main{
+
+section.main {
     min-height: 800px;
 }
 
@@ -92,44 +96,8 @@ body {
     }
 }
 
-div.light-section,
-div.dark-section {
-    padding: 60px 0px 54px 0;
-    min-height: 233px;
-}
 
-div.light-section {
-    background: transparent;
-}
 
-div.dark-section {
-    background: @counter-dark-section;
-}
-
-.e-holder, .pic-box {
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    height: 250px;
-    width: 250px;
-
-    .box-shadow();
-    .border-radius();
-    h2 {
-        .text-size-regular;
-        text-align: center;
-        width: 100%;
-        padding: .5em;
-        margin: 0;
-        opacity: .7;
-        color: white;
-        background: @color-secondary-0;
-    }
-    
-    @media screen and (max-width: @bootstrap-med) {
-        margin-bottom: 1em;
-    }
-}
 .pic-box h2 {
     padding: 1em;
 }
@@ -158,25 +126,25 @@ div#counter-load {
         height: 64px;
     }
 }
-hr.main-section{
+
+hr.main-section {
     .box-shadow(0px, 1px, 5px, .5);
 }
 
-.widget-border{
+.widget-border {
     .border-radius();
     background-color: @clientColorLightGray;
     padding: 1em;
-
 }
 
-.counter-list-page-title{
+.counter-list-page-title {
     list-style: none;
     padding: 0;
-    li{
+    li {
         padding: .3em;
         border-bottom: 1px solid @clientColorLightGray;
-         .counter-page-title;
-         color: @color-primary-3;
+        .counter-page-title;
+        color: @color-primary-3;
     }
 }
 
@@ -208,11 +176,10 @@ hr.main-section{
 }
 
 //my bootstraps;
-.col-xs-mAuto{
-    @media screen and (max-width: @bootstrap-med) {
-        margin-right: auto;
-        margin-left: auto;
-        > div{
+.col-xs-mAuto {
+    @media screen and (max-width: @bootstrap-large) {
+        > div {
+            float: none;
             margin-right: auto;
             margin-left: auto;
         }
@@ -255,7 +222,7 @@ hr.main-section{
 }
 
 //custom alert message
-.counterDraft-alert{
+.counterDraft-alert {
     position: absolute;
     left: 5px;
     right: 5px;

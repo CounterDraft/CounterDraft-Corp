@@ -51,9 +51,6 @@
 
 //Home Page;
 
-@counter-dark-section: #dedede;
-
-
 
 // Test Stuff
 
@@ -93,6 +90,24 @@
     -webkit-border-radius: @radius;
     -moz-border-radius: @radius;
     border-radius: @radius;
+}
+
+.border-radius-set (@top-left: 5px, @top-right: 5px, @bottom-right: 5px, @bottom-left: 5px){
+    border-top-left-radius: @top-left;
+    -moz-border-radius-topleft: @top-left;
+    -webkit-border-top-left-radius: @top-left;
+
+    border-top-right-radius: @top-right;
+    -moz-border-radius-topright: @top-right;
+    -webkit-border-top-right-radius: @top-right;
+
+    border-bottom-right-radius:  @bottom-right;
+    -moz-border-radius-bottomright:  @bottom-right;
+    -webkit-border-bottom-right-radius: @bottom-right;
+
+    border-bottom-left-radius: @bottom-left;
+    -moz-border-radius-bottomleft: @bottom-left;
+    -webkit-border-bottom-left-radius: @bottom-left;
 }
 
 .box-shadow (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5) {
