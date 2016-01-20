@@ -91,7 +91,7 @@ if (typeof angular != 'undefined') {
 
 
 //common object;
-window.counterDraft = {
+counterDraft = {
     'send', 'event', 'Navbar', 'home', 'our_api'
     googleAnalytics:{
         ga: function(action, typeOfAction, element, page, name){
