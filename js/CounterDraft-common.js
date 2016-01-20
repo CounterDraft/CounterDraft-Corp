@@ -89,14 +89,11 @@ if (typeof angular != 'undefined') {
     console.error('Failed to load application.');
 }
 
-
 //common object;
 counterDraft = {
-    'send', 'event', 'Navbar', 'home', 'our_api'
     googleAnalytics:{
         ga: function(action, typeOfAction, element, page, name){
             return false;
         }
     }
-
 }
