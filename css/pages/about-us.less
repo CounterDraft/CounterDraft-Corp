@@ -1,21 +1,33 @@
 article#counter-about-us {
-
+    h3 {
+        margin-bottom: 1em;
+        margin-top: 0;
+        .page-title;
+        color: white !important;
+        padding: .5em;
+        background: @color-secondary-0;
+    }
+    .product-section {
+        padding: 0px 0px 1em 0px !important;
+        .box-shadow();
+        .border-radius(30px);
+        overflow: hidden;
+    }
     .emp-holder {
-    	@media screen and (max-width: @bootstrap-large) {
-    		border-top: 1px solid lightgray;
-    		padding-top: 1em;
-    		padding-bottom: 1em;
-    		.border-radius();
-    		.box-shadow();
-        	.text-holder{
-        		box-shadow: none !important;
-        		border: none !important;
-        	}
-        	.profile-holder{
-        		.border-radius() !important;
-        	}
-    	}
-
+        @media screen and (max-width: @bootstrap-large) {
+            border-top: 1px solid lightgray;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            .border-radius();
+            .box-shadow();
+            .text-holder {
+                box-shadow: none !important;
+                border: none !important;
+            }
+            .profile-holder {
+                .border-radius() !important;
+            }
+        }
         .profile-holder {
             height: 250px;
             width: 250px;
@@ -43,17 +55,18 @@ article#counter-about-us {
             padding-bottom: 1em;
         }
     }
-
     h2.logo-counter-draft {
         min-height: 182px;
     }
-   
     div.light-section,
     div.dark-section {
         padding: 60px 0px 54px 0;
         min-height: 233px;
     }
     div.light-section {
+        h3{
+            .border-radius();
+        }
         background: transparent;
     }
     div.dark-section {
