@@ -2,11 +2,18 @@
  var express = require('express');
  var routerWeb = express.Router();
 
-  //REST Routes
+ //REST Routes
  routerWeb.all('/v2/contacts', function(req, res) {
      getController('contacts-controller').init(req, res);
  });
 
+ // redirect http to https
+ if(config.get('env') === 'production') {
+     routerWeb.get('*', function(req, res, next) {
+         res.redirect('https://' + req.headers.host + req.url)
+         next();
+     })
+ }
 
  // Web Routes
  routerWeb.get('/', function(req, res) {
