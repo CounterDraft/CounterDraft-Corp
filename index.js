@@ -3,7 +3,7 @@
 // ------------------ GLOBAL Setup
 GLOBAL.config = require('./config/environment-settings');
 
-GLOBAL.mix = require('mix-objects');
+GLOBAL.mix = require('mix-into');
 
 GLOBAL.dirBase = process.env.PWD;
 GLOBAL.BASE_URL = 'http://' + config.get('server').ip + ':' + config.get('server').port + '/';
@@ -17,12 +17,14 @@ GLOBAL.Unirest = require('unirest');
 
 GLOBAL.getController = function(controllerName) {
     var Controller = require(GLOBAL.CONTROLLER_DIR + controllerName);
-    return mix(new Controller(), [getBase('counter-controller')]);
+    return mix(new Controller()).into(getBase('counter-controller'));
+    // return mix(new Controller(), [getBase('counter-controller')]);
 }
 
 GLOBAL.getApi = function(apiName) {
     var api = require(GLOBAL.API_DIR + apiName);
-    return mix(new api(), [getBase('counter-api')]);
+    return mix(new api()).into(getBase('counter-api'));
+    // return mix(new api(), [getBase('counter-api')]);
 }
 
 GLOBAL.getBase = function(base) {

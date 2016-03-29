@@ -13,7 +13,7 @@
         "unirest": "^0.4.2",
         "http": "*",
         "bluebird": "3.1.1",
-        "mix-objects": "*",
+        "mix-into": "*",
         "bootstrap": "3.3.5",
         "body-parser": "^1.14.0",
         "ejs": "^2.3.1",
