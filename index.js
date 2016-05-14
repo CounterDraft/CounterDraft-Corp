@@ -68,11 +68,13 @@ var launchApp = function() {
     app.use(expressLayouts);
 
     // redirect http to https
-    if (config.get('env') === 'production') {
-        app.get('*', function(req, res) {
-            res.redirect('https://www.counterdraft.com'+req.url)
-        });
-    }
+     if(config.get('env') === 'production') {
+         app.get('*', function(req, res) {
+            if(!req.connection.encrypted){
+                res.redirect('https://' + req.headers.host + req.url)
+            }
+         });
+     }
 
     // Adding web routes;
     app.use('', router);
@@ -101,7 +103,7 @@ if (config.get('env') === 'production') {
         extra: {
             key: "run"
         }
-    }, function() {
+    }, function(){
         launchApp();
     });
 }
