@@ -69,12 +69,8 @@ var launchApp = function() {
 
     // redirect http to https
     if (config.get('env') === 'production') {
-        app.get('*', function(req, res, next) {
-            if (!/https/.test(req.protocol)) {
-                res.redirect("https://" + req.headers.host + req.url);
-            } else {
-                return next();
-            }
+        app.get('*', function(req, res) {
+            res.redirect('https://mydomain.com'+req.url)
         });
     }
 
