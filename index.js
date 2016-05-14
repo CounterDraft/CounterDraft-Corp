@@ -35,6 +35,7 @@ GLOBAL.getBase = function(base) {
 console.log('Running project in ' + config.get('env') + ' mode.');
 
 var express = require('express');
+var forceSSL = require('express-force-ssl');
 var expressLayouts = require('express-ejs-layouts');
 var npm = require("npm");
 var app = express();
@@ -69,13 +70,7 @@ var launchApp = function() {
 
     // redirect http to https
      if(config.get('env') === 'production') {
-         app.get('*', function(req, res, next) {
-            if(!req.connection.encrypted){
-                res.redirect('https://' + req.headers.host + req.url)
-            }else{
-                return next();
-            }
-         });
+        app.use(forceSSL);
      }
 
     // Adding web routes;
