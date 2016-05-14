@@ -67,6 +67,17 @@ var launchApp = function() {
 
     app.use(expressLayouts);
 
+    // redirect http to https
+    if (config.get('env') === 'production') {
+        app.get('*', function(req, res, next) {
+            if (!/https/.test(req.protocol)) {
+                res.redirect("https://" + req.headers.host + req.url);
+            } else {
+                return next();
+            }
+        });
+    }
+
     // Adding web routes;
     app.use('', router);
     // app.use(cors);
@@ -94,7 +105,7 @@ if (config.get('env') === 'production') {
         extra: {
             key: "run"
         }
-    }, function(){
+    }, function() {
         launchApp();
     });
 }
