@@ -35,7 +35,7 @@ GLOBAL.getBase = function(base) {
 console.log('Running project in ' + config.get('env') + ' mode.');
 
 var express = require('express');
-var forceSSL = require('express-force-ssl');
+var forceSSL = require('force-ssl-heroku');
 var expressLayouts = require('express-ejs-layouts');
 var npm = require("npm");
 var app = express();
@@ -69,9 +69,9 @@ var launchApp = function() {
     app.use(expressLayouts);
 
     // redirect http to https
-     // if(config.get('env') === 'production') {
-     //    app.use(forceSSL);
-     // }
+    if (config.get('env') === 'production') {
+        app.use(forceSSL);
+    }
 
     // Adding web routes;
     app.use('', router);
@@ -100,7 +100,7 @@ if (config.get('env') === 'production') {
         extra: {
             key: "run"
         }
-    }, function(){
+    }, function() {
         launchApp();
     });
 }
