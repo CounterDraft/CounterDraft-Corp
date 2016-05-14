@@ -10,7 +10,7 @@
 
  // Web Routes
  routerWeb.get('/', function(req, res) {
-     res.render('pages/home', {});
+     res.redirect('/home');
  });
 
  routerWeb.get('/home', function(req, res) {
@@ -26,7 +26,7 @@
  });
 
  routerWeb.get('/*', function(req, res, next) {
-     res.redirect('/');
+     res.redirect('/home');
  });
 
  module.exports = routerWeb;
