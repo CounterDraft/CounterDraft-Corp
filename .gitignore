@@ -1,3 +1,8 @@
+# npm libs
 node_modules/*
+# local build files
 build/*
-npm-debug.log
+# Logs
+logs
+*.log
+npm-debug.log*

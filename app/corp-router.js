@@ -7,15 +7,7 @@
      getController('contacts-controller').init(req, res);
  });
 
- // redirect http to https
- if(config.get('env') === 'production') {
-     routerWeb.get('*', function(req, res, next) {
-        if(!req.connection.encrypted){
-            res.redirect('https://' + req.headers.host + req.url)
-        }
-         next();
-     })
- }
+ 
 
  // Web Routes
  routerWeb.get('/', function(req, res) {
