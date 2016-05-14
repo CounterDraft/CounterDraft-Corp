@@ -7,10 +7,11 @@
      getController('contacts-controller').init(req, res);
  });
 
+ 
 
  // Web Routes
  routerWeb.get('/', function(req, res) {
-     res.redirect('/home');
+     res.render('pages/home', {});
  });
 
  routerWeb.get('/home', function(req, res) {
@@ -26,7 +27,7 @@
  });
 
  routerWeb.get('/*', function(req, res, next) {
-     res.redirect('/home');
+     res.redirect('/');
  });
 
  module.exports = routerWeb;

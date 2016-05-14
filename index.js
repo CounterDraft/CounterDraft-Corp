@@ -69,9 +69,9 @@ var launchApp = function() {
     app.use(expressLayouts);
 
     // redirect http to https
-     if(config.get('env') === 'production') {
-        app.use(forceSSL);
-     }
+     // if(config.get('env') === 'production') {
+     //    app.use(forceSSL);
+     // }
 
     // Adding web routes;
     app.use('', router);
