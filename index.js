@@ -42,7 +42,7 @@ GLOBAL.getBase = function(base) {
 
 // --------------------- End
 
-console.log('Running project in ' + config['env'] + ' mode.');
+console.log('Running project in ' + config['environment'] + ' mode.');
 
 var express = require('express');
 var forceSSL = require('force-ssl-heroku');
@@ -65,7 +65,7 @@ app.set('layout', 'layouts/html_corp');
 
 app.use(expressLayouts);
 // redirect http to https
-if (config['env'] === 'production') {
+if (config['environment'] === 'production') {
     app.use(forceSSL);
 }
 
@@ -79,7 +79,7 @@ var launchApp = function() {
 }
 
 var grunt = require("grunt");
-if (config['env'] === 'production') {
+if (config['environment'] === 'production') {
     console.info('Creating the build, please wait...');
     grunt.cli({
         gruntfile: __dirname + "/grunt_pro.js",
@@ -90,7 +90,7 @@ if (config['env'] === 'production') {
         launchApp();
     });
 } else {
-    console.info('Bypassing build we are in ' + config['env'] + ', please wait...');
+    console.info('Bypassing build we are in ' + config['environment'] + ', please wait...');
     grunt.cli({
         gruntfile: __dirname + "/grunt_dev.js",
         extra: {
