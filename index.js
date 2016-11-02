@@ -1,18 +1,28 @@
 "use strict";
 
 // ------------------ GLOBAL Setup
-GLOBAL.config = require('./config/environment-settings');
-
+// Setup the configuration
 GLOBAL.mix = require('mix-into');
+try {
+    var local_config = require('./config/local_config');
+    global.config = mix(require('./config/master_config'))
+        .into(require('./config/local_config'));
+} catch (err) {
+    console.error('No local configurations found in config/ Error=' + JSON.stringify(err));
+    global.config = require('./config/master_config');
+}
+
+
 
 GLOBAL.dirBase = process.env.PWD;
-GLOBAL.BASE_URL = 'http://' + config.get('server').ip + ':' + config.get('server').port + '/';
+GLOBAL.BASE_URL = 'http://' + config['server'].ip + ':' + config['server'].port + '/';
 GLOBAL.CONTROLLER_DIR = dirBase + '/app/controllers/';
 GLOBAL.API_DIR = dirBase + '/app/api/';
 GLOBAL.BASE_DIR = dirBase + '/app/base/';
 
-GLOBAL.Promise = require('bluebird');
-GLOBAL.Unirest = require('unirest');
+global.getPromise = function() {
+    return require('bluebird');
+}
 
 
 GLOBAL.getController = function(controllerName) {
@@ -32,61 +42,47 @@ GLOBAL.getBase = function(base) {
 
 // --------------------- End
 
-console.log('Running project in ' + config.get('env') + ' mode.');
+console.log('Running project in ' + config['env'] + ' mode.');
 
 var express = require('express');
 var forceSSL = require('force-ssl-heroku');
 var expressLayouts = require('express-ejs-layouts');
-var npm = require("npm");
 var app = express();
 var bodyParser = require('body-parser');
+var routerWeb = require('./app/corp-router');
 
-var router = require('./app/corp-router');
+app.use(express.static(__dirname));
+app.use(bodyParser.json()); // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
+    extended: true
+}));
+// views is directory for all template files
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+app.set('port', config.server.port);
+// defaults to 'html_corp' if not defined in the render();
+app.set('layout', 'layouts/html_corp');
+
+app.use(expressLayouts);
+// redirect http to https
+if (config['env'] === 'production') {
+    app.use(forceSSL);
+}
+
+routerWeb.setup(app);
 
 
 var launchApp = function() {
-    app.use(express.static(__dirname));
-
-    app.use(bodyParser.json()); // to support JSON-encoded bodies
-    app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
-        extended: true
-    }));
-
-    // views is directory for all template files
-    app.set('views', __dirname + '/views');
-    app.set('view engine', 'ejs');
-
-    // defaults to 'html_corp' if not defined in the render();
-    app.set('layout', 'layouts/html_corp');
-
-    //Pass in common Environmental Variables.
-    app.settings.config = config;
-    app.set('env', config.get('env'));
-    app.set('port', config.get('server').port);
-    app.set('package_name', config.get('package_name'));
-    app.set('web_app', config.get('web_app'));
-
-    app.use(expressLayouts);
-
-    // redirect http to https
-    if (config.get('env') === 'production') {
-        app.use(forceSSL);
-    }
-
-    // Adding web routes;
-    app.use('', router);
-    // app.use(cors);
-
     app.listen(app.get('port'), function() {
         console.info('Visit http://127.0.0.1:' + app.get('port') + ' to start application.');
     });
 }
 
 var grunt = require("grunt");
-if (config.get('env') === 'production') {
+if (config['env'] === 'production') {
     console.info('Creating the build, please wait...');
     grunt.cli({
-        gruntfile: __dirname + "/gProd.js",
+        gruntfile: __dirname + "/grunt_pro.js",
         extra: {
             key: "run"
         }
@@ -94,9 +90,9 @@ if (config.get('env') === 'production') {
         launchApp();
     });
 } else {
-    console.info('Bypassing build we are in ' + config.get('env') + ', please wait...');
+    console.info('Bypassing build we are in ' + config['env'] + ', please wait...');
     grunt.cli({
-        gruntfile: __dirname + "/gDev.js",
+        gruntfile: __dirname + "/grunt_dev.js",
         extra: {
             key: "run"
         }

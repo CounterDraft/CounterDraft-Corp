@@ -20,20 +20,15 @@
 	<link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
-	<meta name="globalsign-domain-verification" content="O_r_tVtoj3TwF4eTTbDhD77sjIPTz0_NGJD8-ngTso" />
 	<meta name="theme-color" content="#ffffff">
     <% include ../partials/css.ejs %>
 </head>
-<body ng-app="app-counterdraft">
+<body ng-app="CounterDraft">
     <article id="counter-<%= articleID %>">
         <% include ../partials/nav.ejs %>
         <%- body %>
     </article>
 </body>
 <% include ../partials/footer.ejs %>
-<% include ../partials/js.ejs %>
-<div id="counter-modal" class="modal fade" role="dialog"></div>
-<div id="counter-load">
-    <div class="counter-loader"></div>
-</div>
+<% include ../partials/application.ejs %>
 </html>

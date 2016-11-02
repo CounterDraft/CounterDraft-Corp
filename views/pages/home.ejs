@@ -1,4 +1,4 @@
-<section ng-controller="homeController as homeCtrl" class="main">
+<section ng-controller="HomeCtrl as homeCtrl" class="main">
     <div class="top-header">
         <div class="container">
             <div class="col-sm-2">&nbsp;</div>
@@ -68,8 +68,7 @@
                 <div class="body-button-wrapper col-xs-12 text-center">
                     <div class="col-md-4">&nbsp;</div>
                     <div class="col-md-4">
-                        <!-- <button class="btn primary btn-block" ng-click="homeCtrl.showDialog()" data-toggle="modal" data-target="#newsletter-modal">START HERE</button> -->
-                        <a class="btn primary btn-block" href="https://app.counterdraft.com/login" target="_blank">START HERE</a>
+                        <a class="btn primary btn-block" href="<%= web_app %>" target="_blank">START HERE</a>
                     </div>
                     <div class="col-md-4">&nbsp;</div>
                 </div>
@@ -102,4 +101,4 @@
             <div ng-switch-default></div>
         </div>
 </section>
-<%- contentFor('title') %>CounterDraft<%- contentFor('mainjs') %>home<%- contentFor('articleID') %>home
+<%- contentFor('title') %>CounterDraft<%- contentFor('articleID') %>home<%- contentFor('end') %>

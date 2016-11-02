@@ -1,0 +1,24 @@
+<%if (environment === 'production') { %>
+    <script type="text/javascript" src="build/js/min/<%= npm_package_name %>.min.js"></script>
+<% } else { %>
+	<script type="text/javascript" src="/node_modules/angular/angular.js"></script>
+	<script type="text/javascript" src="/js/app.js"></script>
+	<script type="text/javascript" src="/js/directives.js"></script>
+	<script type="text/javascript" src="/node_modules/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/js/controllers/homeCtrl.js"></script>
+	<script type="text/javascript" src="/js/controllers/aboutCtrl.js"></script>
+	<script type="text/javascript" src="/js/controllers/apiCtrl.js"></script>
+
+<% } %>
+<script type="text/javascript">
+	//loads page data to angular;
+	if(window['app']){
+		var data = <%- JSON.stringify(data) %> || "";
+		app.value("data", data);
+	}
+	$(document).ready(function() { 
+
+	});
+</script>
+

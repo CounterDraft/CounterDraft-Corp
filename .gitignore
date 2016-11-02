@@ -1,8 +1,22 @@
-# npm libs
-node_modules/*
-# local build files
-build/*
-# Logs
-logs
-*.log
-npm-debug.log*
+#npm libs
+node_modules/
+
+#bower libs
+bower_components/
+
+#build files
+build/
+
+#generated files
+css/*.css
+
+#configurations
+config/local_config.js
+
+#logs
+npm-debug.log
+log/
+
+#File system files
+*.DS_Store
+
