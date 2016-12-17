@@ -1,5 +1,4 @@
 module.exports = function(grunt) {
-    console.log("herer wer are");
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
