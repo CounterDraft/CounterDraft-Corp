@@ -6,11 +6,21 @@ module.exports = function(grunt) {
 
         clean: {
             pre: ['build'],
-            post: ['build/js/main',
-                'build/js/services',
+             post: ['build/js/controllers',
                 'build/js/*js',
+                'build/js/libs',
+                'build/css/css',
                 'build/css/*less'
             ]
+        },
+
+        ngAnnotate: {
+            demo: {
+                files: {
+                    'build/js/app.js': ['build/js/app.js'],
+                    'build/js/directives.js': ['build/js/directives.js']
+                },
+            }
         },
 
         uglify: {
@@ -19,7 +29,7 @@ module.exports = function(grunt) {
             },
             js: {
                 files: [{
-                    src: 'build/js/<%= pkg.name %>.js',
+                    src: 'build/js/min/<%= pkg.name %>.js',
                     dest: 'build/js/min/<%= pkg.name %>.min.js'
                 }]
             }
@@ -31,12 +41,14 @@ module.exports = function(grunt) {
                     //libs NOTE- If we add more libs there need to be added to the build here;
                     'node_modules/angular/angular.js',
                     'node_modules/jquery/dist/jquery.js',
-                    'build/js/CounterDraft-common.js',
                     'node_modules/bootstrap/dist/js/bootstrap.js',
-                    //pages
-                    'build/js/main/*'
+                    'build/js/app.js',
+                    'build/js/directives.js',
+                    'build/js/controllers/homeCtrl.js',
+                    'build/js/controllers/aboutCtrl.js',
+                    'build/js/controllers/apiCtrl.js'
                 ],
-                dest: 'build/js/<%= pkg.name %>.js'
+                dest: 'build/js/min/<%= pkg.name %>.js'
             }
         },
 
@@ -81,12 +93,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-usemin');
+    grunt.loadNpmTasks('grunt-ng-annotate');
 
 // Default task(s).
     grunt.registerTask('default', [
         'clean:pre',
         'copy',
+        'ngAnnotate',
         'concat',
         'less',
         'uglify',
