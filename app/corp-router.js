@@ -22,6 +22,10 @@ module.exports = {
             res.render('pages/about-us', {data:{}});
         });
 
+        routerWeb.get('/saas-platform', function(req, res) {
+            res.render('pages/saas', {data:{}});
+        });
+
         routerWeb.get('/*', function(req, res, next) {
             res.redirect('/');
         });

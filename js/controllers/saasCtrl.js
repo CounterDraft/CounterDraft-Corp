@@ -1,11 +1,11 @@
-/*  Title: Home Controller
+/*  Title: SaaS Controller
     Author:  Hubbert
-    Date: Aug 16 2016
+    Date: Dec 16 2016
     Comment: 
-        This should all the logic for the Home page.
+        This should all the logic for the SaaS page.
 */
 
-app.controller('HomeCtrl', ['$scope', '$http', '$window', 'data', function($scope, $http, $window, data) {
+app.controller('SaasCtrl', ['$scope', '$http', '$window', 'data', function($scope, $http, $window, data) {
     var _url_login = "/api/v1/account/login";
     var _url_registration = "/api/v1/account/registration";
     var _base_templates = "templates/login/";

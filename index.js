@@ -1,8 +1,8 @@
 "use strict";
 
-// ------------------ GLOBAL Setup
+// ------------------ global Setup
 // Setup the configuration
-GLOBAL.mix = require('mix-into');
+global.mix = require('mix-into');
 try {
     var local_config = require('./config/local_config');
     global.config = mix(require('./config/master_config'))
@@ -14,29 +14,29 @@ try {
 
 
 
-GLOBAL.dirBase = process.env.PWD;
-GLOBAL.BASE_URL = 'http://' + config['server'].ip + ':' + config['server'].port + '/';
-GLOBAL.CONTROLLER_DIR = dirBase + '/app/controllers/';
-GLOBAL.API_DIR = dirBase + '/app/api/';
-GLOBAL.BASE_DIR = dirBase + '/app/base/';
+global.dirBase = process.env.PWD;
+global.BASE_URL = 'http://' + config['server'].ip + ':' + config['server'].port + '/';
+global.CONTROLLER_DIR = dirBase + '/app/controllers/';
+global.API_DIR = dirBase + '/app/api/';
+global.BASE_DIR = dirBase + '/app/base/';
 
 global.getPromise = function() {
     return require('bluebird');
 }
 
 
-GLOBAL.getController = function(controllerName) {
-    var Controller = require(GLOBAL.CONTROLLER_DIR + controllerName);
+global.getController = function(controllerName) {
+    var Controller = require(global.CONTROLLER_DIR + controllerName);
     return mix(new Controller()).into(getBase('counter-controller'));
 }
 
-GLOBAL.getApi = function(apiName) {
-    var api = require(GLOBAL.API_DIR + apiName);
+global.getApi = function(apiName) {
+    var api = require(global.API_DIR + apiName);
     return mix(new api()).into(getBase('counter-api'));
 }
 
-GLOBAL.getBase = function(base) {
-    var baseController = require(GLOBAL.BASE_DIR + base);
+global.getBase = function(base) {
+    var baseController = require(global.BASE_DIR + base);
     return new baseController();
 }
 
