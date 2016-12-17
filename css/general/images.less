@@ -1,14 +1,12 @@
 @import "tools";
-.round{
-    .border-radius(50%); 
+.round {
+    .border-radius(50%);
     padding: 1em;
 }
 
-.square{
+.square {}
 
-}
 .img-home {
-
     background-image: url('@{img-dir}/home-fantasy-football-small.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -18,7 +16,7 @@
     // }
 }
 
-.logo-counter-draft{
+.logo-counter-draft {
     background-image: url('@{img-dir}/CounterDraft-branding/CounterDraftIcon_lrg.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -32,34 +30,50 @@
 }
 
 //emp pics
-.jerum_hubbert{
+.jerum_hubbert {
     background-image: url("@{img-dir}/emp/jerum_hubbert.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 134%;
 }
-.michael_walsh{
+
+.michael_walsh {
     background-image: url("@{img-dir}/emp/michael_walsh.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-.john_laws{
+.john_laws {
     background-image: url("@{img-dir}/emp/john_laws.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-
-div#counter-load .counter-loader{
+div#counter-load .counter-loader {
     background-image: url("/images/gif/loading.gif");
     background-repeat: no-repeat;
     background-size: contain;
 }
 
+.cd-device-img {
+    height: 400px;
+    background-image: url("/images/counterdraft-devices.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media screen and (max-width: @bootstrap-med) {
+    .cd-device-img {
+        height: 250px;
+    }
+}
+
+
 /* icons */
+
 [class^="counter-icon-"] {
     height: 40px;
     width: 40px;
@@ -82,31 +96,33 @@ div#counter-load .counter-loader{
     background-image: url("/images/social-media/Instagram-logo.png");
 }
 
-.counter-icon-apple-store{
+.counter-icon-apple-store {
     background-image: url("/images/company-brands/Download_on_the_App_Store_Badge_US-UK_135x40.svg");
     width: 140px;
 }
 
 .counter-icon-google-play {
     background-image: url("/images/company-brands/en_generic_rgb_wo_60.png");
-    width:118px;
+    width: 118px;
 }
-.counter-icon-mastercard-large{
+
+.counter-icon-mastercard-large {
     background-image: url("/images/company-brands/MasterCard-Logo.svg");
-    width:60px;
+    width: 60px;
 }
-.counter-icon-visa-large{
+
+.counter-icon-visa-large {
     background-image: url("/images/company-brands/Visa.svg");
-    width:60px;
+    width: 60px;
 }
-.counter-icon-discover-large{
+
+.counter-icon-discover-large {
     background-image: url("/images/company-brands/DiscoverCard.svg");
-    width:60px;
+    width: 60px;
     background-color: white;
 }
-.counter-icon-americanexpress-large{
+
+.counter-icon-americanexpress-large {
     background-image: url("/images/company-brands/American_Express_logo.svg");
-    width:60px;
+    width: 60px;
 }
-
-
