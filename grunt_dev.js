@@ -9,14 +9,32 @@ module.exports = function(grunt) {
                 'build/js/*js',
                 'build/css/*less'
             ]
+        },
+        less: {
+            development: {
+                options: {
+                    paths: ["./css/"],
+                    compress: false
+                },
+                files: {
+                    "./css/counter-main.css": "./css/counter-main.less"
+                }
+            }
+        },
+        watch: {
+            files: ["./css/*"],
+            tasks: ["less"],
+            options: {
+                nospawn: true
+            }
         }
     });
 
     //load all tasks;
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
-    grunt.registerTask('default', [
-        'clean:pre'
-    ]);
+    grunt.registerTask('default', ['clean:pre', 'less', 'watch']);
 };

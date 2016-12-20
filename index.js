@@ -50,6 +50,8 @@ var expressLayouts = require('express-ejs-layouts');
 var app = express();
 var bodyParser = require('body-parser');
 var routerWeb = require('./app/corp-router');
+var Promise = getPromise();
+var grunt = require("grunt");
 
 app.use(express.static(__dirname));
 app.use(bodyParser.json()); // to support JSON-encoded bodies
@@ -72,13 +74,28 @@ if (config['environment'] === 'production') {
 routerWeb.setup(app);
 
 
-var launchApp = function() {
-    app.listen(app.get('port'), function() {
-        console.info('Visit http://127.0.0.1:' + app.get('port') + ' to start application.');
+var _addWatcher = function() {
+    return new Promise(function(resolve, reject) {
+        grunt.cli({
+            gruntfile: __dirname + "/Grunt_dev.js",
+            extra: {
+                key: "run"
+            }
+        }, function() {
+            return resolve(true);
+        });
     });
 }
 
-var grunt = require("grunt");
+var _launchApp = function() {
+    return new Promise(function(resolve, reject) {
+        app.listen(app.get('port'), function() {
+            console.info('Visit http://127.0.0.1:' + app.get('port') + ' to start application.');
+            return resolve(true);
+        });
+    });
+}
+
 if (config['environment'] === 'production') {
     console.info('Creating the build, please wait...');
     grunt.cli({
@@ -87,16 +104,15 @@ if (config['environment'] === 'production') {
             key: "run"
         }
     }, function() {
-        launchApp();
+        _launchApp();
     });
 } else {
     console.info('Bypassing build we are in ' + config['environment'] + ', please wait...');
-    grunt.cli({
-        gruntfile: __dirname + "/grunt_dev.js",
-        extra: {
-            key: "run"
+    _launchApp().then(function(result) {
+        if (result) {
+            _addWatcher();
         }
-    }, function() {
-        launchApp();
+    }).catch(function(err) {
+        console.error(err);
     });
 }
