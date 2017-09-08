@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 
         clean: {
             pre: ['build'],
-             post: ['build/js/controllers',
+            post: ['build/js/controllers',
                 'build/js/*js',
                 'build/js/libs',
                 'build/css/css',
@@ -65,6 +65,14 @@ module.exports = function(grunt) {
             }
         },
 
+        watch: {
+            files: ["./css/*"],
+            tasks: ["less"],
+            options: {
+                nospawn: true
+            }
+        },
+
         less: {
             development: {
                 options: {
@@ -117,8 +125,8 @@ module.exports = function(grunt) {
     ]);
 
     // Default task(s).
-    grunt.registerTask('dev', ['clean:pre', 'less:development', 'watch']);
-     // Default task(s).
+    grunt.registerTask('default', ['clean:pre', 'less:development', 'watch']);
+    // Default task(s).
     grunt.registerTask('pro', ['compile']);
-    
+
 };

@@ -82,7 +82,7 @@ var grunt = require("grunt");
 if (config['environment'] === 'production') {
     console.info('Creating the build, please wait...');
     grunt.cli({
-        gruntfile: __dirname + "/grunt.js ",
+        gruntfile: __dirname + "/Gruntfile.js ",
         extra: {
             key: "run"
         }
@@ -92,7 +92,8 @@ if (config['environment'] === 'production') {
 } else {
     console.info('Bypassing build we are in ' + config['environment'] + ', please wait...');
     grunt.cli({
-        gruntfile: __dirname + "/grunt_dev.js",
+        gruntfile: __dirname + "/Gruntfile.js",
+        task: 'dev',
         extra: {
             key: "run"
         }
