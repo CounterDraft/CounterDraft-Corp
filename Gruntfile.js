@@ -66,7 +66,16 @@ module.exports = function(grunt) {
         },
 
         less: {
-            compile: {
+            development: {
+                options: {
+                    paths: ["./css/"],
+                    compress: false
+                },
+                files: {
+                    "./css/counter-main.css": "./css/counter-main.less"
+                }
+            },
+            production: {
                 options: {
                     compress: true,
                     strictMath: true,
@@ -94,15 +103,22 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-ng-annotate');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-// Default task(s).
-    grunt.registerTask('default', [
+    // Default task(s).
+    grunt.registerTask('compile', [
         'clean:pre',
         'copy',
         'ngAnnotate',
         'concat',
-        'less',
+        'less:production',
         'uglify',
         'clean:post'
     ]);
+
+    // Default task(s).
+    grunt.registerTask('dev', ['clean:pre', 'less:development', 'watch']);
+     // Default task(s).
+    grunt.registerTask('pro', ['compile']);
+    
 };

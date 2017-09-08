@@ -82,7 +82,7 @@ var grunt = require("grunt");
 if (config['environment'] === 'production') {
     console.info('Creating the build, please wait...');
     grunt.cli({
-        gruntfile: __dirname + "/grunt_pro.js",
+        gruntfile: __dirname + "/grunt.js ",
         extra: {
             key: "run"
         }
